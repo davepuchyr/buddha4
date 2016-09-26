@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="desktop">
+			<dir name="gnome">
+				<dir name="url-handlers">
+					<dir name="ymsgr">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Терминалыште командым шукташ">
+								<longdesc>Чын, тыгай кылвер дене ончыктымо командым терминалыште шуктыман гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;ymsgr&quot; URL-лан келыштарыше">
+								<longdesc>&quot;ymsgr&quot; URL дене кучылталтше команде, чӱктымӧ гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Палемдыме команде &quot;ymsgr&quot; URL-ым келыштарышаш мо">
+								<longdesc>Чын, &quot;command&quot; сравочышто ойлымо команде &quot;ymsgr&quot; кыл деке эҥерта гын.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="xmpp">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Терминалыште командым шукташ">
+								<longdesc>Чын, тыгай кылвер дене ончыктымо командым терминалыште шуктыман гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;xmpp&quot; URL-лан келыштарыше">
+								<longdesc>&quot;xmpp&quot; URL дене кучылталтше команде, чӱктымӧ гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Палемдыме команде &quot;xmpp&quot; URL-ым келыштарышаш мо">
+								<longdesc>Чын, &quot;command&quot; сравочышто ойлымо команде &quot;xmpp&quot; кыл деке эҥерта гын.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="sip">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Терминалыште командым шукташ">
+								<longdesc>Чын, тыгай кылвер дене ончыктымо командым терминалыште шуктыман гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;sip&quot; URL-лан келыштарыше">
+								<longdesc>&quot;sip&quot; URL дене кучылталтше команде, чӱктымӧ гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Палемдыме команде &quot;sip&quot; URL-ым келыштарышаш мо">
+								<longdesc>Чын, &quot;command&quot; сравочышто ойлымо команде &quot;sip&quot; кыл деке эҥерта гын.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="msnim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Терминалыште командым шукташ">
+								<longdesc>Чын, тыгай кылвер дене ончыктымо командым терминалыште шуктыман гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;msnim&quot; URL-лан келыштарыше">
+								<longdesc>&quot;msnim&quot; URL дене кучылталтше команде, чӱктымӧ гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Палемдыме команде &quot;msnim&quot; URL-ым келыштарышаш мо">
+								<longdesc>Чын, &quot;command&quot; сравочышто ойлымо команде &quot;msnim&quot; кыл деке эҥерта гын.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="irc">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Терминалыште командым шукташ">
+								<longdesc>Чын, тыгай кылвер дене ончыктымо командым терминалыште шуктыман гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;irc&quot; URL-лан келыштарыше">
+								<longdesc>&quot;irc&quot; URL дене кучылталтше команде, чӱктымӧ гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Палемдыме команде &quot;irc&quot; URL-ым келыштарышаш мо">
+								<longdesc>Чын, &quot;command&quot; сравочышто ойлымо команде &quot;irc&quot; кыл деке эҥерта гын.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="icq">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Терминалыште командым шукташ">
+								<longdesc>Чын, тыгай кылвер дене ончыктымо командым терминалыште шуктыман гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;icq&quot; URL-лан келыштарыше">
+								<longdesc>&quot;icq&quot; URL дене кучылталтше команде, чӱктымӧ гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Палемдыме команде &quot;icq&quot; URL-ым келыштарышаш мо">
+								<longdesc>Чын, &quot;command&quot; сравочышто ойлымо команде &quot;icq&quot; кыл деке эҥерта гын.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="gg">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Терминалыште командым шукташ">
+								<longdesc>Чын, тыгай кылвер дене ончыктымо командым терминалыште шуктыман гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;gg&quot; URL -лан келыштарыше">
+								<longdesc>&quot;gg&quot; URL дене кучылталтше команде, чӱктымӧ гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Палемдыме команде &quot;gg&quot; URL-ым келыштарышаш мо">
+								<longdesc>Чын, &quot;command&quot; сравочышто ойлымо команде &quot;gg&quot; кыл деке эҥерта гын.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="aim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Терминалыште командым шукташ">
+								<longdesc>Чын, тыгай кылвер дене ончыктымо командым терминалыште шуктыман гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;aim&quot; URL-лан келыштарыше">
+								<longdesc>&quot;aim&quot; URL дене кучылталтше команде, чӱктымӧ гын.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Палемдыме команде &quot;aim&quot; URL-ым келыштарышаш мо">
+								<longdesc>Чын, &quot;command&quot; сравочышто ойлымо команде &quot;aim&quot; кыл деке эҥерта гын.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

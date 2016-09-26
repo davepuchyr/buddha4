@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="desktop">
+			<dir name="gnome">
+				<dir name="url-handlers">
+					<dir name="ymsgr">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Vykanaj zahad u terminale">
+								<longdesc>Praŭda, kali zahad dziela adčynieńnia spasyłak hetaha typu pavinny vykonvacca ŭ terminale.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="Adčynieńnie spasyłak &quot;ymsgr&quot;">
+								<longdesc>Zahad dziela adčynieńnia spasyłak &quot;ymsgr&quot;, kali ŭklučanyja.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Ci adčyniać spasyłki &quot;ymsgr&quot; akreślenym zahadam">
+								<longdesc>Praŭda, kali zahad, akreśleny dla kluča &quot;command&quot;, pavinny adčyniać spasyłki &quot;ymsgr&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="xmpp">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Vykanaj zahad u terminale">
+								<longdesc>Praŭda, kali zahad dziela adčynieńnia spasyłak hetaha typu pavinny vykonvacca ŭ terminale.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="Adčynieńnie spasyłak &quot;xmpp&quot;">
+								<longdesc>Zahad dziela adčynieńnia spasyłak &quot;xmpp&quot;, kali ŭklučanyja.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Ci adčyniać spasyłki &quot;xmpp&quot; akreślenym zahadam">
+								<longdesc>Praŭda, kali zahad, akreśleny dla kluča &quot;command&quot;, pavinny adčyniać spasyłki &quot;xmpp&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="sip">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Vykanaj zahad u terminale">
+								<longdesc>Praŭda, kali zahad dziela adčynieńnia spasyłak hetaha typu pavinny vykonvacca ŭ terminale.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="Adčynieńnie spasyłak &quot;sip&quot;">
+								<longdesc>Zahad dziela adčynieńnia spasyłak &quot;sip&quot;, kali ŭklučanyja.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Ci adčyniać spasyłki &quot;sip&quot; akreślenym zahadam">
+								<longdesc>Praŭda, kali zahad, akreśleny dla kluča &quot;command&quot;, pavinny adčyniać spasyłki &quot;sip&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="msnim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Vykanaj zahad u terminale">
+								<longdesc>Praŭda, kali zahad dziela adčynieńnia spasyłak hetaha typu pavinny vykonvacca ŭ terminale.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="Adčynieńnie spasyłak &quot;msnim&quot;">
+								<longdesc>Zahad dziela adčynieńnia spasyłak &quot;msnim&quot;, kali ŭklučanyja.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Ci adčyniać spasyłki &quot;msnim&quot; akreślenym zahadam">
+								<longdesc>Praŭda, kali zahad, akreśleny dla kluča &quot;command&quot;, pavinny adčyniać spasyłki &quot;msnim&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="irc">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Vykanaj zahad u terminale">
+								<longdesc>Praŭda, kali zahad dziela adčynieńnia spasyłak hetaha typu pavinny vykonvacca ŭ terminale.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="Adčynieńnie spasyłak &quot;irc&quot;">
+								<longdesc>Zahad dziela adčynieńnia spasyłak &quot;irc&quot;, kali ŭklučanyja.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Ci adčyniać spasyłki &quot;irc&quot; akreślenym zahadam">
+								<longdesc>Praŭda, kali zahad, akreśleny dla kluča &quot;command&quot;, pavinny adčyniać spasyłki &quot;irc&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="icq">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Vykanaj zahad u terminale">
+								<longdesc>Praŭda, kali zahad dziela adčynieńnia spasyłak hetaha typu pavinny vykonvacca ŭ terminale.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="Adčynieńnie spasyłak &quot;icq&quot;">
+								<longdesc>Zahad dziela adčynieńnia spasyłak &quot;icq&quot;, kali ŭklučanyja.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Ci adčyniać spasyłki &quot;icq&quot; akreślenym zahadam">
+								<longdesc>Praŭda, kali zahad, akreśleny dla kluča &quot;command&quot;, pavinny adčyniać spasyłki &quot;icq&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="gg">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Vykanaj zahad u terminale">
+								<longdesc>Praŭda, kali zahad dziela adčynieńnia spasyłak hetaha typu pavinny vykonvacca ŭ terminale.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="Adčynieńnie spasyłak &quot;gg&quot;">
+								<longdesc>Zahad dziela adčynieńnia spasyłak &quot;gg&quot;, kali ŭklučanyja.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Ci adčyniać spasyłki &quot;gg&quot; akreślenym zahadam">
+								<longdesc>Praŭda, kali zahad, akreśleny dla kluča &quot;command&quot;, pavinny adčyniać spasyłki &quot;gg&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="aim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Vykanaj zahad u terminale">
+								<longdesc>Praŭda, kali zahad dziela adčynieńnia spasyłak hetaha typu pavinny vykonvacca ŭ terminale.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="Adčynieńnie spasyłak &quot;aim&quot;">
+								<longdesc>Zahad dziela adčynieńnia spasyłak &quot;aim&quot;, kali ŭklučanyja.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Ci adčyniać spasyłki &quot;aim&quot; akreślenym zahadam">
+								<longdesc>Praŭda, kali zahad, akreśleny dla kluča &quot;command&quot;, pavinny adčyniać spasyłki &quot;aim&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

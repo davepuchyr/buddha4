@@ -1,0 +1,20 @@
+systemd-timesync:100000:65536
+systemd-network:165536:65536
+systemd-resolve:231072:65536
+systemd-bus-proxy:296608:65536
+dbus:362144:65536
+polkitd:427680:65536
+geoclue:493216:65536
+rtkit:558752:65536
+pulse:624288:65536
+avahi:689824:65536
+chrony:755360:65536
+rpc:820896:65536
+abrt:886432:65536
+rpcuser:951968:65536
+nfsnobody:1017504:65536
+colord:1083040:65536
+sshd:1148576:65536
+tss:1214112:65536
+# empty default subuid/subgid file
+tcpdump:1279648:65536

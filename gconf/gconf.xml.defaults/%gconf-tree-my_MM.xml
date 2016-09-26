@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="desktop">
+			<dir name="gnome">
+				<dir name="url-handlers">
+					<dir name="ymsgr">
+						<entry name="needs_terminal">
+							<local_schema short_desc="ညွှန်ကြားချက်ကို terminal တွင် လုပ်ဆောင်ပါ">
+								<longdesc>ဤ URL အမျိုးအစားကို ကိုင်တွယ်ရန် သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် terminal ထဲ၌ သုံးစွဲပါက အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;ymsgr&quot; URLs ကို ကိုင်တွယ်သူ">
+								<longdesc>အကယ်၍ ဖွင့်ထားပါက၊ &quot;ymsgr&quot; URLs ကို ကိုင်တွယ်ရာတွင် သုံးစွဲသော ညွှန်ကြားချက်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;ymsgr&quot; URLs ကို ကိုင်တွယ်ရန် လိုမလို">
+								<longdesc>&quot;command&quot; ကီးထဲ၌ သတ်မှတ်ထားသော ညွှန်ကြားချက်သည &quot;ymsgr&quot; URLs ကို ကိုင်တွယ်ပါက​ အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="xmpp">
+						<entry name="needs_terminal">
+							<local_schema short_desc="ညွှန်ကြားချက်ကို terminal တွင် လုပ်ဆောင်ပါ">
+								<longdesc>ဤ URL အမျိုးအစားကို ကိုင်တွယ်ရန် သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် terminal ထဲ၌ သုံးစွဲပါက အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;xmpp&quot; URLs ကို ကိုင်တွယ်သူ">
+								<longdesc>အကယ်၍ ဖွင့်ထားပါက၊ &quot;xmpp&quot; URLs ကို ကိုင်တွယ်ရာတွင် သုံးစွဲသော ညွှန်ကြားချက်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;xmpp&quot; URLs ကို ကိုင်တွယ်ရန် လိုမလို">
+								<longdesc>&quot;command&quot; ကီးထဲ၌ သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;xmpp&quot; URLs ကို ကိုင်တွယ်ပါက​ အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="sip">
+						<entry name="needs_terminal">
+							<local_schema short_desc="ညွှန်ကြားချက်ကို terminal တွင် လုပ်ဆောင်ပါ">
+								<longdesc>ဤ URL အမျိုးအစားကို ကိုင်တွယ်ရန် သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် terminal ထဲ၌ သုံးစွဲပါက အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;sip&quot; URLs ကို ကိုင်တွယ်သူ">
+								<longdesc>အကယ်၍ ဖွင့်ထားပါက၊ &quot;sip&quot; URLs ကို ကိုင်တွယ်ရာတွင် သုံးစွဲသော ညွှန်ကြားချက်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;sip&quot; URLs ကို ကိုင်တွယ်ရန် လိုမလို">
+								<longdesc>&quot;command&quot; ကီးထဲ၌ သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;sip&quot; URLs ကို ကိုင်တွယ်ပါက​ အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="msnim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="ညွှန်ကြားချက်ကို terminal တွင် လုပ်ဆောင်ပါ">
+								<longdesc>ဤ URL အမျိုးအစားကို ကိုင်တွယ်ရန် သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် terminal ထဲ၌ သုံးစွဲပါက အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;msnim&quot; URLs ကို ကိုင်တွယ်သူ">
+								<longdesc>အကယ်၍ ဖွင့်ထားပါက၊ &quot;msnim&quot; URLs ကို ကိုင်တွယ်ရာတွင် သုံးစွဲသော ညွှန်ကြားချက်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;msnim&quot; URLs ကို ကိုင်တွယ်ရန် လိုမလို">
+								<longdesc>&quot;command&quot; ကီးထဲ၌ သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;msnim&quot; URLs ကို ကိုင်တွယ်ပါက​ အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="irc">
+						<entry name="needs_terminal">
+							<local_schema short_desc="ညွှန်ကြားချက်ကို terminal တွင် လုပ်ဆောင်ပါ">
+								<longdesc>ဤ URL အမျိုးအစားကို ကိုင်တွယ်ရန် သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် terminal ထဲ၌ သုံးစွဲပါက အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc=" &quot;irc&quot; URLs ကို ကိုင်တွယ်သူ">
+								<longdesc>အကယ်၍ ဖွင့်ထားပါက၊ &quot;irc&quot; URLs ကို ကိုင်တွယ်ရာတွင် သုံးစွဲသော ညွှန်ကြားချက်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;irc&quot; URLs ကို ကိုင်တွယ်ရန် လိုမလို">
+								<longdesc>&quot;command&quot; ကီးထဲ၌ သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;irc&quot; URLs ကို ကိုင်တွယ်ပါက​ အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="icq">
+						<entry name="needs_terminal">
+							<local_schema short_desc="ညွှန်ကြားချက်ကို terminal တွင် လုပ်ဆောင်ပါ">
+								<longdesc>ဤ URL အမျိုးအစားကို ကိုင်တွယ်ရန် သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် terminal ထဲ၌ သုံးစွဲပါက အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;icq&quot; URLs ကို ကိုင်တွယ်သူ">
+								<longdesc>အကယ်၍ ဖွင့်ထားပါက၊ &quot;icq&quot; URLs ကို ကိုင်တွယ်ရာတွင် သုံးစွဲသော ညွှန်ကြားချက်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;icq&quot; URLs ကို ကိုင်တွယ်ရန် လိုမလို">
+								<longdesc>&quot;command&quot; ကီးထဲ၌ သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;icq&quot; URLs ကို ကိုင်တွယ်ပါက​ အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="gg">
+						<entry name="needs_terminal">
+							<local_schema short_desc="ညွှန်ကြားချက်ကို terminal တွင် လုပ်ဆောင်ပါ">
+								<longdesc>ဤ URL အမျိုးအစားကို ကိုင်တွယ်ရန် သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် terminal ထဲ၌ သုံးစွဲပါက အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;gg&quot; URLs ကို ကိုင်တွယ်သူ">
+								<longdesc>အကယ်၍ ဖွင့်ထားပါက၊  &quot;gg&quot; URLs ကို ကိုင်တွယ်ရာတွင် သုံးစွဲသော ညွှန်ကြားချက်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;gg&quot; URLs ကို ကိုင်တွယ်ရန် လိုမလို">
+								<longdesc>&quot;command&quot; ကီးထဲ၌ သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;gg&quot; URLs ကို ကိုင်တွယ်ပါက​ အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="aim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="ညွှန်ကြားချက်ကို terminal တွင် လုပ်ဆောင်ပါ">
+								<longdesc>ဤ URL အမျိုးအစားကို ကိုင်တွယ်ရန် သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် terminal ထဲ၌ သုံးစွဲပါက အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="&quot;aim&quot; URLs ကို ကိုင်တွယ်သူ">
+								<longdesc>အကယ်၍ ဖွင့်ထားပါက၊  &quot;aim&quot; URLs ကို ကိုင်တွယ်ရာတွင် သုံးစွဲသော ညွှန်ကြားချက်။</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;aim&quot; URLs ကို ကိုင်တွယ်ရန် လိုမလို">
+								<longdesc>&quot;command&quot; ကီးထဲ၌ သတ်မှတ်ထားသော ညွှန်ကြားချက်သည် &quot;aim&quot; URLs ကို ကိုင်တွယ်ပါက​ အမှန်ဟု သတ်မှတ်မည်။</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="desktop">
+			<dir name="gnome">
+				<dir name="url-handlers">
+					<dir name="ymsgr">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Ejecutar el comando en un terminal">
+								<longdesc>Verdadero si el comando usado para administrar este tipo de direcciones web debería ser ejecutado en un terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="El gestor para direcciones web &quot;ymsgr&quot;">
+								<longdesc>Si está habilitado, el comando maneja direcciones web &quot;ymsgr&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Si el comando especificado debería administrar direcciones web &quot;ymsgr&quot;">
+								<longdesc>Verdadero si el comando especificado en la clave &quot;comando&quot; debería administrar direcciones web &quot;ymsgr&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="xmpp">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Ejecutar el comando en un terminal">
+								<longdesc>Verdadero si el comando usado para administrar este tipo de direcciones web debería ser ejecutado en un terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="El gestor para direcciones web &quot;xmpp&quot;">
+								<longdesc>Si está habilitado, el comando maneja direcciones web &quot;xmpp&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Si el comando especificado debería administrar direcciones web &quot;xmpp&quot;">
+								<longdesc>Verdadero si el comando especificado en la clave &quot;comando&quot; debería administrar direcciones web &quot;xmpp&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="sip">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Ejecutar el comando en un terminal">
+								<longdesc>Verdadero si el comando usado para administrar este tipo de direcciones web debería ser ejecutado en un terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="El gestor para direcciones web &quot;sip&quot;">
+								<longdesc>Si está habilitado, el comando maneja direcciones web &quot;sip&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Si el comando especificado debería administrar direcciones web &quot;sip&quot;">
+								<longdesc>Verdadero si el comando especificado en la clave &quot;comando&quot; debería administrar direcciones web &quot;sip&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="msnim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Ejecutar el comando en un terminal">
+								<longdesc>Verdadero si el comando usado para administrar este tipo de direcciones web debería ser ejecutado en un terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="El gestor para direcciones web &quot;msnim&quot;">
+								<longdesc>Si está habilitado, el comando maneja direcciones web &quot;msnim&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Si el comando especificado debería administrar direcciones web &quot;msnim&quot;">
+								<longdesc>Verdadero si el comando especificado en la clave &quot;comando&quot; debería administrar direcciones web &quot;msnim&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="irc">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Ejecutar el comando en un terminal">
+								<longdesc>Verdadero si el comando usado para administrar este tipo de direcciones web debería ser ejecutado en un terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="El gestor para direcciones web &quot;irc&quot;">
+								<longdesc>Si está habilitado, el comando maneja direcciones web &quot;irc&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Si el comando especificado debería administrar direcciones web &quot;irc&quot;">
+								<longdesc>Verdadero si el comando especificado en la clave &quot;comando&quot; debería administrar direcciones web &quot;irc&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="icq">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Ejecutar el comando en un terminal">
+								<longdesc>Verdadero si el comando usado para administrar este tipo de direcciones web debería ser ejecutado en un terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="El gestor para direcciones web &quot;icq&quot;">
+								<longdesc>Si está habilitado, el comando maneja direcciones web &quot;icq&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Si el comando especificado debería administrar direcciones web &quot;icq&quot;">
+								<longdesc>Verdadero si el comando especificado en la clave &quot;comando&quot; debería administrar direcciones web &quot;icq&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="gg">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Ejecutar el comando en un terminal">
+								<longdesc>Verdadero si el comando usado para administrar este tipo de direcciones web debería ser ejecutado en un terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="El gestor para direcciones web &quot;gg&quot;">
+								<longdesc>Si está habilitado, el comando maneja direcciones web &quot;gg&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Si el comando especificado debería administrar direcciones web &quot;gg&quot;">
+								<longdesc>Verdadero si el comando especificado en la clave &quot;comando&quot; debería administrar direcciones web &quot;gg&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="aim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Ejecutar el comando en un terminal">
+								<longdesc>Verdadero si el comando usado para administrar este tipo de direcciones web debería ser ejecutado en un terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="El gestor para direcciones web &quot;aim&quot;">
+								<longdesc>Si está habilitado, el comando maneja direcciones web &quot;aim&quot;.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Si el comando especificado debería administrar direcciones web &quot;aim&quot;">
+								<longdesc>Verdadero si el comando especificado en la clave &quot;comando&quot; debería administrar direcciones web &quot;aim&quot;.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

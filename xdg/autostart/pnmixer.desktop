@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=PNMixer
+Name[de]=PNMixer
+Name[fr]=PNMixer
+GenericName=System Tray Mixer
+GenericName[de]=Benachrichtigungsfeld Mixer
+GenericName[fr]=Zone de Notification Mixeur
+Comment=An audio mixer for the system tray
+Comment[de]=Ein Audiomixer für das Benachrichtigungsfeld
+Comment[fr]=Un Mixeur Audio pour la Zone de Notification
+Exec=pnmixer
+TryExec=pnmixer
+Icon=multimedia-volume-control
+Terminal=false
+Type=Application
+Categories=AudioVideo;Mixer;GTK;Audio;TrayIcon;
+X-Desktop-File-Install-Version=0.22
+OnlyShowIn=XFCE;LXDE;

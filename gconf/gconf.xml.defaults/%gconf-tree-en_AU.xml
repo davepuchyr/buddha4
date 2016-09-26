@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="desktop">
+			<dir name="gnome">
+				<dir name="url-handlers">
+					<dir name="ymsgr">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Run the command in a terminal">
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="The handler for &quot;ymsgr&quot; URLs">
+								<longdesc>The command used to handle &quot;ymsgr&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Whether the specified command should handle &quot;ymsgr&quot; URLs">
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;ymsgr&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="xmpp">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Run the command in a terminal">
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="The handler for &quot;xmpp&quot; URLs">
+								<longdesc>The command used to handle &quot;xmpp&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Whether the specified command should handle &quot;xmpp&quot; URLs">
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;xmpp&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="sip">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Run the command in a terminal">
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="The handler for &quot;sip&quot; URLs">
+								<longdesc>The command used to handle &quot;sip&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Whether the specified command should handle &quot;sip&quot; URLs">
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;sip&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="msnim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Run the command in a terminal">
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="The handler for &quot;msnim&quot; URLs">
+								<longdesc>The command used to handle &quot;msnim&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Whether the specified command should handle &quot;msnim&quot; URLs">
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;msnim&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="irc">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Run the command in a terminal">
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="The handler for &quot;irc&quot; URLs">
+								<longdesc>The command used to handle &quot;irc&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Whether the specified command should handle &quot;irc&quot; URLs">
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;irc&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="icq">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Run the command in a terminal">
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="The handler for &quot;icq&quot; URLs">
+								<longdesc>The command used to handle &quot;icq&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Whether the specified command should handle &quot;icq&quot; URLs">
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;icq&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="gg">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Run the command in a terminal">
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="The handler for &quot;gg&quot; URLs">
+								<longdesc>The command used to handle &quot;gg&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Whether the specified command should handle &quot;gg&quot; URLs">
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;gg&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+					<dir name="aim">
+						<entry name="needs_terminal">
+							<local_schema short_desc="Run the command in a terminal">
+								<longdesc>True if the command used to handle this type of URL should be run in a terminal.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="command">
+							<local_schema short_desc="The handler for &quot;aim&quot; URLs">
+								<longdesc>The command used to handle &quot;aim&quot; URLs, if enabled.</longdesc>
+							</local_schema>
+						</entry>
+						<entry name="enabled">
+							<local_schema short_desc="Whether the specified command should handle &quot;aim&quot; URLs">
+								<longdesc>True if the command specified in the &quot;command&quot; key should handle &quot;aim&quot; URLs.</longdesc>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>
