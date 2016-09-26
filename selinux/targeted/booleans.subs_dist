@@ -51,3 +51,4 @@ clamd_use_jit antivirus_use_jit
 amavis_use_jit antivirus_use_jit
 logwatch_can_sendmail logwatch_can_network_connect_mail
 puppet_manage_all_files puppetagent_manage_all_files
+virt_sandbox_use_nfs virt_use_nfs

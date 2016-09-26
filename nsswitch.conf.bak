@@ -35,7 +35,7 @@ shadow:     files sss
 group:      files sss
 
 #hosts:     db files nisplus nis dns
-hosts:      files dns myhostname
+hosts:      files mdns4_minimal [NOTFOUND=return] dns myhostname
 
 # Example - obey only what nisplus tells us...
 #services:   nisplus [NOTFOUND=return] files
@@ -54,9 +54,9 @@ protocols:  files
 rpc:        files
 services:   files sss
 
-netgroup:   nisplus sss
+netgroup:   files sss
 
 publickey:  nisplus
 
-automount:  files nisplus
+automount:  files sss
 aliases:    files nisplus

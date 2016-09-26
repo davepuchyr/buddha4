@@ -51,3 +51,4 @@ sshd:x:74:
 tss:x:59:
 slocate:x:21:
 tcpdump:x:72:
+dianne:x:1000:

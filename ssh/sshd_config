@@ -119,6 +119,8 @@ X11Forwarding yes
 #PrintMotd yes
 #PrintLastLog yes
 #TCPKeepAlive yes
+# WARNING: 'UseLogin yes' is not supported in Fedora and may cause several
+# problems.
 #UseLogin no
 #UsePrivilegeSeparation sandbox
 #PermitUserEnvironment no
