@@ -10,4 +10,8 @@
   <delegatePublic publicIdStartString="ISO 8879:1986" catalog="file:///etc/sgml/docbook/xmlcatalog"/>
   <delegateSystem systemIdStartString="http://www.oasis-open.org/docbook/" catalog="file:///etc/sgml/docbook/xmlcatalog"/>
   <delegateURI uriStartString="http://www.oasis-open.org/docbook/" catalog="file:///etc/sgml/docbook/xmlcatalog"/>
+  <rewriteSystem systemIdStartString="http://docbook.sourceforge.net/release/xsl/1.78.1" rewritePrefix="file:///usr/share/sgml/docbook/xsl-stylesheets-1.78.1"/>
+  <rewriteURI uriStartString="http://docbook.sourceforge.net/release/xsl/1.78.1" rewritePrefix="file:///usr/share/sgml/docbook/xsl-stylesheets-1.78.1"/>
+  <rewriteSystem systemIdStartString="http://docbook.sourceforge.net/release/xsl/current" rewritePrefix="file:///usr/share/sgml/docbook/xsl-stylesheets-1.78.1"/>
+  <rewriteURI uriStartString="http://docbook.sourceforge.net/release/xsl/current" rewritePrefix="file:///usr/share/sgml/docbook/xsl-stylesheets-1.78.1"/>
 </catalog>

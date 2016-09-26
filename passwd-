@@ -30,3 +30,4 @@ colord:x:992:987:User for colord:/var/lib/colord:/sbin/nologin
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
 tcpdump:x:72:72::/:/sbin/nologin
+dianne:x:1000:1000:Dianne Puchyr:/home/dianne:/bin/bash

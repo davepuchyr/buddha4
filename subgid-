@@ -16,5 +16,6 @@ nfsnobody:1017504:65536
 colord:1083040:65536
 sshd:1148576:65536
 tss:1214112:65536
-# empty default subuid/subgid file
 tcpdump:1279648:65536
+# empty default subuid/subgid file
+dianne:1345184:65536
