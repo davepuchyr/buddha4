@@ -1056,8 +1056,6 @@
 1474926877 iwl2000-firmware 18.168.6.1 67.fc24 noarch
 1474926877 iwl2030-firmware 18.168.6.1 67.fc24 noarch
 1474926877 iwl3160-firmware 25.30.13.0 67.fc24 noarch
-1474927249 rpmfusion-free-release 24 0.1 noarch
-1474927249 rpmfusion-nonfree-release 24 0.1 noarch
 1474928828 gpg-pubkey 7fac5991 4615767f (none)
 1474928828 gpg-pubkey b7546f06 5544d2dc (none)
 1474928828 gpg-pubkey d38b4796 570c8cd3 (none)
@@ -1692,3 +1690,6 @@
 1474929062 webkitgtk 2.4.11 2.fc24 i686
 1474929063 skype-data 4.3.0.37 3.fc24 noarch
 1474929065 skype 4.3.0.37 3.fc24 i686
+1474929306 gpg-pubkey 96ca6280 5544d430 (none)
+1474929342 rpmfusion-free-release 24 1 noarch
+1474929342 rpmfusion-nonfree-release 24 1 noarch
