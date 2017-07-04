@@ -160,3 +160,7 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
+
+# dmjp: https://askubuntu.com/a/158250
+load-module module-switch-on-connect
+

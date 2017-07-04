@@ -1424,7 +1424,6 @@
 /var/log/maillog[^/]*	system_u:object_r:var_log_t:s0
 /var/log/spooler[^/]*	system_u:object_r:var_log_t:s0
 /boot/System\.map(-.*)?	--	system_u:object_r:system_map_t:s0
-/var/lib/roundup(/.*)?	--	system_u:object_r:roundup_var_lib_t:s0
 /var/cache/swift(/.*)?	--	system_u:object_r:swift_var_cache_t:s0
 /usr/sbin/crack_[a-z]*	--	system_u:object_r:crack_exec_t:s0
 /var/spool/debug(/.*)?	system_u:object_r:abrt_var_cache_t:s0
@@ -1543,6 +1542,7 @@
 /var/lib/haproxy(/.*)?	system_u:object_r:haproxy_var_lib_t:s0
 /var/lib/openais(/.*)?	system_u:object_r:cluster_var_lib_t:s0
 /var/lib/pengine(/.*)?	system_u:object_r:cluster_var_lib_t:s0
+/var/lib/roundup(/.*)?	system_u:object_r:roundup_var_lib_t:s0
 /var/lib/rpcbind(/.*)?	system_u:object_r:rpcbind_var_lib_t:s0
 /var/cache/samba(/.*)?	system_u:object_r:samba_var_t:s0
 /var/spool/samba(/.*)?	system_u:object_r:samba_spool_t:s0
@@ -2522,6 +2522,7 @@
 /usr/X11R6/lib/X11/fonts(/.*)?	system_u:object_r:fonts_t:s0
 /usr/share/mojomojo/root(/.*)?	system_u:object_r:mojomojo_content_t:s0
 /var/lib/containers/home(/.*)?	system_u:object_r:openshift_var_lib_t:s0
+/etc/sysconfig/oracleasm(/.*)?	system_u:object_r:oracleasm_conf_t:s0
 /var/lib/openlmi-storage(/.*)?	system_u:object_r:pegasus_openlmi_storage_lib_t:s0
 /var/run/openlmi-storage(/.*)?	system_u:object_r:pegasus_openlmi_storage_var_run_t:s0
 /var/spool/postfix/defer(/.*)?	system_u:object_r:postfix_spool_t:s0
@@ -3002,6 +3003,7 @@
 /usr/share/munin/plugins/courier_mta_.*	--	system_u:object_r:mail_munin_plugin_exec_t:s0
 /usr/share/munin/plugins/postfix_mail.*	--	system_u:object_r:mail_munin_plugin_exec_t:s0
 /etc/sysconfig/network-scripts/ifdown.*	system_u:object_r:bin_t:s0
+/usr/libexec/glusterfs/peer_eventsapi.py	--	system_u:object_r:glusterd_exec_t:s0
 /var/run/dovecot/login/ssl-parameters.dat	--	system_u:object_r:dovecot_var_lib_t:s0
 /usr/lib/nagios/plugins/eventhandlers(/.*)	system_u:object_r:nagios_eventhandler_plugin_exec_t:s0
 /usr/lib/icinga/plugins/eventhandlers(/.*)	system_u:object_r:nagios_eventhandler_plugin_exec_t:s0
@@ -3015,6 +3017,7 @@
 /usr/lib/policykit/polkit-grant-helper.*	--	system_u:object_r:policykit_grant_exec_t:s0
 /usr/libexec/polkit-resolve-exe-helper.*	--	system_u:object_r:policykit_resolve_exec_t:s0
 /usr/lib/systemd/system/corosync-qnetd.*	--	system_u:object_r:cluster_unit_file_t:s0
+/usr/lib/systemd/system-generators/nfs.*	--	system_u:object_r:nfsd_exec_t:s0
 /usr/share/squeezeboxserver/CPAN/arch/.+\.so	--	system_u:object_r:textrel_shlib_t:s0
 /ostree/deploy/rhel-atomic-host/deploy(/.*)?	system_u:object_r:system_conf_t:s0
 /etc/NetworkManager/system-connections(/.*)?	system_u:object_r:NetworkManager_etc_rw_t:s0
@@ -3051,6 +3054,7 @@
 /usr/lib/systemd/system/openstack-glance-api.*	--	system_u:object_r:glance_api_unit_file_t:s0
 /usr/lib/systemd/system/pkcs11proxyd-softhsm.*	--	system_u:object_r:pkcs11proxyd_unit_file_t:s0
 /usr/lib/policykit/polkit-resolve-exe-helper.*	--	system_u:object_r:policykit_resolve_exec_t:s0
+/usr/libexec/glusterfs/events/glustereventsd.py	--	system_u:object_r:glusterd_exec_t:s0
 /opt/OpenPrinting-Gutenprint/cups/lib/filter(/.*)?	system_u:object_r:bin_t:s0
 /usr/share/mirrormanager/server/mirrormanager(/.*)?	system_u:object_r:mirrormanager_exec_t:s0
 /usr/share/gedit-2/plugins/externaltools/tools(/.*)?	system_u:object_r:bin_t:s0
@@ -3132,6 +3136,7 @@
 /fastboot	--	system_u:object_r:etc_runtime_t:s0
 /poweroff	--	system_u:object_r:etc_runtime_t:s0
 /sbin/nft	--	system_u:object_r:iptables_exec_t:s0
+/sbin/sln	--	system_u:object_r:ldconfig_exec_t:s0
 /sbin/lvm	--	system_u:object_r:lvm_exec_t:s0
 /sbin/lvs	--	system_u:object_r:lvm_exec_t:s0
 /sbin/pvs	--	system_u:object_r:lvm_exec_t:s0
@@ -4985,6 +4990,7 @@
 /usr/bin/corosync-qnetd	--	system_u:object_r:cluster_exec_t:s0
 /usr/libexec/modcluster	--	system_u:object_r:ricci_modcluster_exec_t:s0
 /usr/bin/roundup-server	--	system_u:object_r:roundup_exec_t:s0
+/var/run/rpc\.statd\.lock	--	system_u:object_r:rpcd_lock_t:s0
 /usr/bin/yum-deprecated	--	system_u:object_r:rpm_exec_t:s0
 /usr/kerberos/sbin/kshd	--	system_u:object_r:rshd_exec_t:s0
 /var/run/samba/nmbd\.pid	--	system_u:object_r:nmbd_var_run_t:s0
@@ -5057,6 +5063,7 @@
 /usr/bin/gl-auth-command	--	system_u:object_r:gitosis_exec_t:s0
 /usr/bin/glance-registry	--	system_u:object_r:glance_registry_exec_t:s0
 /usr/bin/glance-scrubber	--	system_u:object_r:glance_scrubber_exec_t:s0
+/usr/sbin/glustereventsd	--	system_u:object_r:glusterd_exec_t:s0
 /etc/rc\.d/init\.d/hddtemp	--	system_u:object_r:hddtemp_initrc_exec_t:s0
 /etc/rc\.d/init\.d/icecast	--	system_u:object_r:icecast_initrc_exec_t:s0
 /usr/libexec/news/expire	--	system_u:object_r:innd_exec_t:s0
@@ -5374,6 +5381,7 @@
 /usr/sbin/printconf-backend	--	system_u:object_r:cupsd_config_exec_t:s0
 /var/www/cgi-bin/cvsweb\.cgi	--	system_u:object_r:cvs_script_exec_t:s0
 /var/run/audio-entropyd\.pid	--	system_u:object_r:entropyd_var_run_t:s0
+/usr/sbin/gluster-eventsapi	--	system_u:object_r:glusterd_exec_t:s0
 /usr/lib/hsqldb/hsqldb-post	--	system_u:object_r:hsqldb_exec_t:s0
 /usr/lib/hsqldb/hsqldb-stop	--	system_u:object_r:hsqldb_exec_t:s0
 /usr/sbin/hwloc-dump-hwdata	--	system_u:object_r:hwloc_dhwd_exec_t:s0

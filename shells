@@ -4,3 +4,5 @@
 /usr/bin/sh
 /usr/bin/bash
 /usr/sbin/nologin
+/usr/bin/zsh
+/bin/zsh
