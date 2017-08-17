@@ -1801,3 +1801,12 @@
 1502995440 redhat-rpm-config 45 1.fc25 noarch
 1502995440 rpm-build 4.13.0.1 1.fc25 x86_64
 1502995440 rpmrebuild 2.11 5.fc24 noarch
+1503002246 nomachine 5.3.10 6 x86_64
+1503002676 boost-chrono 1.60.0 10.fc25 x86_64
+1503002676 boost-random 1.60.0 10.fc25 x86_64
+1503002676 boost-system 1.60.0 10.fc25 x86_64
+1503002676 libtommath 1.0 8.fc25 x86_64
+1503002677 qbittorrent 3.3.11 2.fc25 x86_64
+1503002677 qtlockedfile-qt5 2.4 21.20150629git5a07df5.fc24 x86_64
+1503002677 qtsingleapplication-qt5 2.6.1 28.fc24 x86_64
+1503002677 rb_libtorrent 1.1.2 3.fc25 x86_64
