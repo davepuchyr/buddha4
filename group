@@ -8,7 +8,7 @@ disk:x:6:
 lp:x:7:
 mem:x:8:
 kmem:x:9:
-wheel:x:10:
+wheel:x:10:dave
 cdrom:x:11:
 mail:x:12:
 man:x:15:
@@ -51,7 +51,8 @@ sshd:x:74:
 tss:x:59:
 slocate:x:21:
 tcpdump:x:72:
-dianne:x:1000:
+dianne:x:1000:dave
 cgred:x:986:
 polipo:x:985:
 nx:x:1001:
+dave:x:500:dianne

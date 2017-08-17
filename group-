@@ -51,6 +51,8 @@ sshd:x:74:
 tss:x:59:
 slocate:x:21:
 tcpdump:x:72:
-dianne:x:1000:
+dianne:x:1000:dave
 cgred:x:986:
 polipo:x:985:
+nx:x:1001:
+dave:x:500:dianne
