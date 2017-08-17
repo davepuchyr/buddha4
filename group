@@ -54,3 +54,4 @@ tcpdump:x:72:
 dianne:x:1000:
 cgred:x:986:
 polipo:x:985:
+nx:x:1001:
