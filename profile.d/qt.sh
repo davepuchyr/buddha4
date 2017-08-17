@@ -20,9 +20,10 @@ for QTDIR in ${QT_PREFIXES} ; do
 done
 unset QT_PREFIXES
 
-if ! echo ${PATH} | /bin/grep -q $QTDIR/bin ; then
-   PATH=$QTDIR/bin:${PATH}
-fi
+case :$PATH: in
+    *:$QTDIR/bin:*) ;;
+    *) PATH=$QTDIR/bin:$PATH ;;
+esac
 
 QTINC="$QTDIR/include"
 QTLIB="$QTDIR/lib"

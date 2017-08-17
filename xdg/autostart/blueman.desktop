@@ -88,5 +88,5 @@ Exec=blueman-applet
 Terminal=false
 Type=Application
 Categories=GTK;GNOME;
-X-Desktop-File-Install-Version=0.22
+X-Desktop-File-Install-Version=0.23
 NotShowIn=KDE;

@@ -131,6 +131,7 @@
 /home/[^/]+/\.cache/gstreamer-.*	unconfined_u:object_r:gstreamer_home_t:s0
 /home/[^/]+/\.juniper_networks(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]+/\.cache/thumbnails(/.*)?	unconfined_u:object_r:thumb_home_t:s0
+/home/[^/]+/\.local/share/xorg(/.*)?	unconfined_u:object_r:xdm_home_t:s0
 /home/[^/]+/\.cache/icedtea-web(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]+/\.cache/gnome-boxes(/.*)?	unconfined_u:object_r:virt_home_t:s0
 /home/[^/]+/\.local/share/fonts(/.*)?	unconfined_u:object_r:user_fonts_t:s0
