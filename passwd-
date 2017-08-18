@@ -35,3 +35,6 @@ polipo:x:991:985:Polipo Web Proxy:/var/cache/polipo:/sbin/nologin
 nx:x:990:1001::/var/NX/nx:/etc/NX/nxserver
 dave:x:500:500:Dave Puchyr:/home/dave:/bin/bash
 apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+nagios:x:499:499::/var/spool/nagios:/sbin/nologin
+saslauth:x:498:76:Saslauthd user:/run/saslauthd:/sbin/nologin
+mailnull:x:47:47::/var/spool/mqueue:/sbin/nologin
