@@ -8,7 +8,7 @@ disk:x:6:
 lp:x:7:
 mem:x:8:
 kmem:x:9:
-wheel:x:10:
+wheel:x:10:dave
 cdrom:x:11:
 mail:x:12:
 man:x:15:
@@ -56,3 +56,5 @@ cgred:x:986:
 polipo:x:985:
 nx:x:1001:
 dave:x:500:dianne
+apache:x:48:
+nagios:x:499:

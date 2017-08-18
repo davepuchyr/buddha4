@@ -1810,3 +1810,16 @@
 1503002677 qtlockedfile-qt5 2.4 21.20150629git5a07df5.fc24 x86_64
 1503002677 qtsingleapplication-qt5 2.6.1 28.fc24 x86_64
 1503002677 rb_libtorrent 1.1.2 3.fc25 x86_64
+1503017366 httpd-filesystem 2.4.27 3.fc25 noarch
+1503017366 nagios-common 4.3.2 5.fc25 x86_64
+1503017366 nagios-plugins 2.2.1 3git.fc25 x86_64
+1503017366 php-common 7.0.22 1.fc25 x86_64
+1503017366 php-json 7.0.22 1.fc25 x86_64
+1503017367 fedora-logos-httpd 22.0.0 3.fc24 noarch
+1503017367 httpd-tools 2.4.27 3.fc25 x86_64
+1503017367 php-cli 7.0.22 1.fc25 x86_64
+1503017368 httpd 2.4.27 3.fc25 x86_64
+1503017368 mod_http2 1.10.10 1.fc25 x86_64
+1503017369 php 7.0.22 1.fc25 x86_64
+1503017370 nagios 4.3.2 5.fc25 x86_64
+1503017370 nagios-plugins-perl 2.2.1 3git.fc25 x86_64

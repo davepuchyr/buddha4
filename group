@@ -56,3 +56,5 @@ cgred:x:986:
 polipo:x:985:
 nx:x:1001:
 dave:x:500:dianne
+apache:x:48:
+nagios:x:499:apache

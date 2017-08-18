@@ -19,5 +19,7 @@ tss:1214112:65536
 tcpdump:1279648:65536
 dianne:1345184:65536
 polipo:1410720:65536
-# empty default subuid/subgid file
 nx:1476256:65536
+apache:1541792:65536
+# empty default subuid/subgid file
+nagios:1607328:65536
