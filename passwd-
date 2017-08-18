@@ -40,3 +40,4 @@ saslauth:x:498:76:Saslauthd user:/run/saslauthd:/sbin/nologin
 mailnull:x:47:47::/var/spool/mqueue:/sbin/nologin
 smmsp:x:51:51::/var/spool/mqueue:/sbin/nologin
 systemd-coredump:x:984:984:systemd Core Dumper:/:/sbin/nologin
+setroubleshoot:x:497:497::/var/lib/setroubleshoot:/sbin/nologin

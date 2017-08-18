@@ -63,3 +63,4 @@ mailnull:x:47:
 smmsp:x:51:
 systemd-coredump:x:984:
 setroubleshoot:x:497:
+named:x:25:

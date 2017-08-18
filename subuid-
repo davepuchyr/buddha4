@@ -24,5 +24,6 @@ apache:1541792:65536
 nagios:1607328:65536
 saslauth:1672864:65536
 mailnull:1738400:65536
-# empty default subuid/subgid file
 smmsp:1803936:65536
+# empty default subuid/subgid file
+setroubleshoot:1869472:65536

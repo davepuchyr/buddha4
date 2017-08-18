@@ -1831,3 +1831,4 @@
 1503021125 setroubleshoot 3.3.12 1.fc25 x86_64
 1503021125 setroubleshoot-plugins 3.3.7 1.fc25 noarch
 1503021125 setroubleshoot-server 3.3.12 1.fc25 x86_64
+1503021291 bind 9.10.5 2.P2.fc25 x86_64
