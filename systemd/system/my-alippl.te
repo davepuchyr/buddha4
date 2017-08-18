@@ -1,0 +1,14 @@
+
+module my-alippl 1.0;
+
+require {
+	type nagios_etc_t;
+	type init_t;
+	class file { execute execute_no_trans };
+}
+
+#============= init_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow init_t nagios_etc_t:file execute;
+allow init_t nagios_etc_t:file execute_no_trans;

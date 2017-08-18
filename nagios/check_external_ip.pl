@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 use strict;
-use lib '/usr/lib/nagios/plugins';
+use lib '/usr/lib64/nagios/plugins';
 use utils qw( $TIMEOUT %ERRORS );
 use LWP::UserAgent;
 
