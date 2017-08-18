@@ -1,0 +1,13 @@
+[Unit]
+Description=Kick check_external_ip.pl on reboot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/etc/nagios/check_external_ip.pl telus
+#StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
+
