@@ -1,0 +1,14 @@
+
+module my-arp 1.0;
+
+require {
+	type proc_net_t;
+	type nagios_t;
+	class file { getattr open read };
+}
+
+#============= nagios_t ==============
+allow nagios_t proc_net_t:file getattr;
+
+#!!!! This avc is allowed in the current policy
+allow nagios_t proc_net_t:file { open read };

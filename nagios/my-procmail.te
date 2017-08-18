@@ -1,0 +1,10 @@
+
+module my-procmail 1.0;
+
+require {
+	type procmail_t;
+	class capability fowner;
+}
+
+#============= procmail_t ==============
+allow procmail_t self:capability fowner;

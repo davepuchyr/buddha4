@@ -1,0 +1,31 @@
+
+module my-df 1.0;
+
+require {
+	type var_lib_nfs_t;
+	type pstore_t;
+	type hugetlbfs_t;
+	type sysctl_fs_t;
+	type rpc_pipefs_t;
+	type nagios_t;
+	type configfs_t;
+	class dir { getattr search };
+}
+
+#============= nagios_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow nagios_t configfs_t:dir getattr;
+
+#!!!! This avc is allowed in the current policy
+allow nagios_t hugetlbfs_t:dir getattr;
+
+#!!!! This avc is allowed in the current policy
+allow nagios_t pstore_t:dir getattr;
+allow nagios_t rpc_pipefs_t:dir getattr;
+
+#!!!! This avc is allowed in the current policy
+allow nagios_t sysctl_fs_t:dir search;
+
+#!!!! This avc is allowed in the current policy
+allow nagios_t var_lib_nfs_t:dir search;

@@ -1,0 +1,22 @@
+
+module my-checkexternal 1.0;
+
+require {
+	type ifconfig_exec_t;
+	type http_port_t;
+	type init_t;
+	type nagios_t;
+	class file { execute execute_no_trans open read };
+	class tcp_socket name_connect;
+}
+
+#============= init_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow init_t http_port_t:tcp_socket name_connect;
+
+#============= nagios_t ==============
+allow nagios_t ifconfig_exec_t:file execute_no_trans;
+
+#!!!! This avc is allowed in the current policy
+allow nagios_t ifconfig_exec_t:file { execute open read };

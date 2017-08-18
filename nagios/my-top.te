@@ -1,0 +1,14 @@
+
+module my-top 1.0;
+
+require {
+	type initrc_var_run_t;
+	type nagios_t;
+	class file { lock open read };
+}
+
+#============= nagios_t ==============
+allow nagios_t initrc_var_run_t:file lock;
+
+#!!!! This avc is allowed in the current policy
+allow nagios_t initrc_var_run_t:file { open read };

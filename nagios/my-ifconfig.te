@@ -1,0 +1,11 @@
+
+module my-ifconfig 1.0;
+
+require {
+	type nagios_t;
+	type sysctl_net_t;
+	class dir search;
+}
+
+#============= nagios_t ==============
+allow nagios_t sysctl_net_t:dir search;
