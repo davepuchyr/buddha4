@@ -97,21 +97,17 @@ alias fgrep='fgrep --color'
 alias df='df -h'
 alias vi=vim
 alias ssh='ssh -X'
-alias ssg='ssh -X -p 10176'
-alias cvs='cvs -z3'
+alias rsync23='rsync -e "ssh -p 23" '
+alias ssh23='ssh -X -p 23'
 #alias vmware=vmwarearts
 #alias unison='unison -rsync -maxthreads 5'
 alias unison='unison -rsync'
 alias tidy='tidy -utf8 --indent-spaces 3 --merge-divs 0 --merge-spans 0 -w 256 -ibcum --drop-proprietary-attributes 1 --fix-uri 1 --word-2000 1 --tidy-mark 0 --vertical-space 1 --clean 0'
-alias yum='yum --disableplugin=refresh-packagekit'
 alias mysqldump='mysqldump --skip-opt --add-drop-table --add-locks --create-options --quick --lock-tables --set-charset --disable-keys -c'
 alias vncviewer='vncviewer DotWhenNoCursor=1'
 alias mpg123='mpg123 --verbose --control --title --long-tag'
-alias dracut='dracut -v --add resume'
-
-# The next line updates PATH for the Google Cloud SDK.
-#source '/opt/google-cloud-sdk/path.bash.inc'
-
-# The next line enables shell command completion for gcloud.
-#source '/opt/google-cloud-sdk/completion.bash.inc'
+alias dracut='dracut -v --add resume --omit-drivers nouveau'
+alias synergyc='synergyc -d ERROR'
+alias synergys='synergys -d ERROR'
+alias google-chrome='google-chrome --remote-debugging-port=9222'
 
