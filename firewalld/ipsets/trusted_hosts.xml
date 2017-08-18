@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ipset type="hash:ip">
+  <short>trusted hosts</short>
+  <description>trusted hosts</description>
+  <entry>95.211.131.137</entry>
+  <entry>81.36.63.130</entry>
+</ipset>
