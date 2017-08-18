@@ -24,6 +24,22 @@ dnl # Uncomment and edit the following line if your outgoing mail needs to
 dnl # be sent out through an external mail server:
 dnl #
 dnl define(`SMART_HOST', `smtp.your.provider')dnl
+dnl http://kurt.seifried.org/2012/05/14/fedora-16-and-red-hat-on-ec2-with-sendmail-using-smart_host-with-authentication/
+TRUST_AUTH_MECH(`EXTERNAL DIGEST-MD5 CRAM-MD5 LOGIN PLAIN')dnl
+define(`confAUTH_MECHANISMS', `EXTERNAL GSSAPI DIGEST-MD5 CRAM-MD5 LOGIN PLAIN')dnl
+dnl DAEMON_OPTIONS(`Port=submission, Name=MSA, M=Ea')dnl
+define(`confCACERT_PATH', `/etc/pki/tls/certs')dnl
+dnl define(`confCACERT', `/etc/pki/tls/certs/CA_bundle.pem')dnl
+define(`confCACERT', `/etc/pki/tls/certs/ca-bundle.crt')dnl
+define(`confSERVER_CERT', `/etc/pki/tls/certs/localhost.crt')dnl
+define(`confSERVER_KEY', `/etc/pki/tls/private/localhost.key')dnl
+define(`confCLIENT_CERT', `/etc/pki/tls/certs/localhost.crt')dnl
+define(`confCLIENT_KEY', `/etc/pki/tls/private/localhost.key')dnl
+define(`SMART_HOST', `smtp.gmail.com')dnl
+define(`RELAY_MAILER_ARGS', `TCP $h 587')
+define(`ESMTP_MAILER_ARGS', `TCP $h 587')
+FEATURE(`authinfo',`hash /etc/mail/authinfo')dnl
+dnl ~kurt.seifried
 dnl #
 define(`confDEF_USER_ID', ``8:12'')dnl
 dnl define(`confAUTO_REBUILD')dnl
@@ -115,7 +131,7 @@ dnl # The following causes sendmail to only listen on the IPv4 loopback address
 dnl # 127.0.0.1 and not on any other network devices. Remove the loopback
 dnl # address restriction to accept email from the internet or intranet.
 dnl #
-DAEMON_OPTIONS(`Port=smtp,Addr=127.0.0.1, Name=MTA')dnl
+dnl dmjp DAEMON_OPTIONS(`Port=smtp,Addr=127.0.0.1, Name=MTA')dnl
 dnl #
 dnl # The following causes sendmail to additionally listen to port 587 for
 dnl # mail from MUAs that authenticate. Roaming users who can't reach their
