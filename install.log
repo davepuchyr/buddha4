@@ -1837,3 +1837,5 @@
 1503021869 bwidget 1.9.7 7.fc24 noarch
 1503021869 setools-gui 3.3.8 12.fc25 x86_64
 1503021869 setools-libs-tcl 3.3.8 12.fc25 x86_64
+1503025274 fail2ban-firewalld 0.9.6 4.fc25 noarch
+1503025274 fail2ban-server 0.9.6 4.fc25 noarch
