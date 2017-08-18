@@ -35,7 +35,7 @@ my $iproute = `ip route`;
 my $ifconfig = `ifconfig`;
 my $df = `df -h`;
 my $arp = `arp -a`;
-my $top = `top -b -n 1 -c`;
+my $top = `COLUMNS=132 top -b -n 1 -c`;
 `cat <<EOMAIL | mail -s '$host ip address mismatch: $ip != $dnsip' $recipients 
 IP address reported by curl: $ip
  IP address reported by DNS: $dnsip
