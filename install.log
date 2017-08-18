@@ -1828,3 +1828,6 @@
 1503017712 procmail 3.22 39.fc24 x86_64
 1503017713 sendmail 8.15.2 8.fc25 x86_64
 1503017714 sendmail-cf 8.15.2 8.fc25 noarch
+1503021125 setroubleshoot 3.3.12 1.fc25 x86_64
+1503021125 setroubleshoot-plugins 3.3.7 1.fc25 noarch
+1503021125 setroubleshoot-server 3.3.12 1.fc25 x86_64

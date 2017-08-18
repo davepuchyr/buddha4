@@ -61,3 +61,4 @@ nagios:x:499:apache
 saslauth:x:76:
 mailnull:x:47:
 smmsp:x:51:
+systemd-coredump:x:984:
