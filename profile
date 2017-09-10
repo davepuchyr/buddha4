@@ -81,6 +81,7 @@ export BROWSER=google-chrome
 # dmjp: appengine maxs out at jdk7 as of 2014.08.12 export JAVA_HOME=/usr/java/latest
 export JAVA_HOME=/usr/java/jdk1.8.0_91
 #export PATH=$PATH:/opt/crosstool-ng/bin:/opt/gradle/bin:/opt/android-sdks/platform-tools:/opt/android-sdks/tools:/opt/activator
+export PATH=$PATH:/opt/gradle/bin:/opt/node/bin
 
 # dmjp: http://www.r-tutor.com/gpu-computing/cuda-installation/cuda7.5-fc21
 #export CUDA_HOME=/usr/local/cuda-7.5
