@@ -7,5 +7,7 @@
   <service name="imaps"/>
   <service name="samba"/>
   <service name="samba-client"/>
-  <port port="3129" protocol="tcp"/>
+  <port protocol="tcp" port="3129"/>
+  <port protocol="tcp" port="5556"/>
+  <port protocol="tcp" port="5558"/>
 </zone>
