@@ -6,3 +6,5 @@
 /usr/sbin/nologin
 /usr/bin/zsh
 /bin/zsh
+/usr/bin/tmux
+/bin/tmux
