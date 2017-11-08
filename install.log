@@ -1851,3 +1851,6 @@
 1510136148 nss-softokn-freebl 3.33.0 1.1.fc25 i686
 1510136148 p11-kit 0.23.9 2.fc25 i686
 1510136309 stunnel 5.41 1.fc25 x86_64
+1510138139 Percona-Server-shared-57 5.7.13 6.1.el7 x86_64
+1510138139 Percona-Server-shared-compat-57 5.7.13 6.1.el7 x86_64
+1510138141 Percona-Server-client-57 5.7.13 6.1.el7 x86_64
