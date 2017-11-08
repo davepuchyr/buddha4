@@ -1705,6 +1705,7 @@
 /root/\.gstreamer-.*	system_u:object_r:gstreamer_home_t:s0
 /var/log/ksmtuned.*	system_u:object_r:ksmtuned_log_t:s0
 /var/lock/mailman.*	system_u:object_r:mailman_lock_t:s0
+/var/log/boot\.log.*	system_u:object_r:plymouthd_var_log_t:s0
 /etc/\.resolv\.conf.*	system_u:object_r:net_conf_t:s0
 /var/log/watchdog.*	system_u:object_r:watchdog_log_t:s0
 /var/run/svnserve.pid	--	system_u:object_r:svnserve_var_run_t:s0
@@ -4182,7 +4183,6 @@
 /dev/xen/gntalloc	-c	system_u:object_r:xen_device_t:s0
 /dev/vmbus/hv_vss	-c	system_u:object_r:hypervvssd_device_t:s0
 /dev/vmbus/hv_kvp	-c	system_u:object_r:hypervkvp_device_t:s0
-/var/log/boot\.log	system_u:object_r:plymouthd_var_log_t:s0
 /usr/vice/etc/afsd	--	system_u:object_r:afs_exec_t:s0
 /var/run/aiccu\.pid	--	system_u:object_r:aiccu_var_run_t:s0
 /usr/sbin/anaconda	--	system_u:object_r:install_exec_t:s0
