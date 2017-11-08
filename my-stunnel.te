@@ -1,0 +1,10 @@
+
+module my-stunnel 1.0;
+
+require {
+	type stunnel_t;
+	class process setsched;
+}
+
+#============= stunnel_t ==============
+allow stunnel_t self:process setsched;
