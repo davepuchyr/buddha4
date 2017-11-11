@@ -1,0 +1,21 @@
+
+module my-systemd 1.0;
+
+require {
+	type usr_t;
+	type init_t;
+	type user_home_t;
+	class file { open read unlink };
+}
+
+#============= init_t ==============
+
+#!!!! The file '/opt/monero-data-dir/monerod.pid' is mislabeled on your system.  
+#!!!! Fix with $ restorecon -R -v /opt/monero-data-dir/monerod.pid
+allow init_t user_home_t:file open;
+
+#!!!! This avc is allowed in the current policy
+allow init_t user_home_t:file { read unlink };
+
+#!!!! WARNING: 'usr_t' is a base type.
+allow init_t usr_t:file unlink;

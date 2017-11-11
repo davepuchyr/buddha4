@@ -6,4 +6,6 @@
   <service name="dhcpv6-client"/>
   <service name="dns"/>
   <service name="telnet"/>
+  <port port="10000" protocol="tcp"/>
+  <port port="20000" protocol="tcp"/>
 </zone>
