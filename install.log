@@ -1854,3 +1854,9 @@
 1510503438 libsss_sudo 1.16.0 1.fc25 x86_64
 1510503438 sssd-nfs-idmap 1.16.0 1.fc25 x86_64
 1510503438 sssd-proxy 1.16.0 1.fc25 x86_64
+1510504599 glibc-static 2.24 10.fc25 x86_64
+1510509994 golang-src 1.8.4 1.fc25 noarch
+1510510003 golang-bin 1.8.4 1.fc25 x86_64
+1510510005 golang 1.8.4 1.fc25 x86_64
+1510510565 go-compilers-golang-compiler 1 8.fc25 x86_64
+1510557812 caddy 0.10.10 1.fc25 x86_64
