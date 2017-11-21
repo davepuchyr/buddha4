@@ -27,5 +27,6 @@ mailnull:1738400:65536
 smmsp:1803936:65536
 setroubleshoot:1869472:65536
 named:1935008:65536
-# empty default subuid/subgid file
 caddy:2000544:65536
+# empty default subuid/subgid file
+noip:2066080:65536

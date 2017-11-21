@@ -43,3 +43,4 @@ systemd-coredump:x:984:984:systemd Core Dumper:/:/sbin/nologin
 setroubleshoot:x:497:497::/var/lib/setroubleshoot:/sbin/nologin
 named:x:25:25:Named:/var/named:/sbin/nologin
 monero:x:1005:1005:monero:/home/monero:/bin/bash
+caddy:x:496:496:Caddy web server:/var/lib/caddy:/sbin/nologin
