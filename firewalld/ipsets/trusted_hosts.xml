@@ -3,8 +3,13 @@
   <short>trusted hosts</short>
   <description>trusted hosts</description>
   <entry>70.66.156.169</entry><!-- attach -->
-  <entry>88.3.72.23</entry><!-- bcn -->
+  <entry>83.36.189.99</entry><!-- bcn -->
   <entry>192.188.183.71</entry><!-- cool -->
+  <entry>117.121.209.165</entry><!-- debt -->
+  <entry>45.33.41.76</entry><!-- fmt1 public -->
+  <entry>192.168.223.35</entry><!-- fmt1 private -->
+  <entry>172.104.239.213</entry><!-- fra1 public-->
+  <entry>192.168.149.206</entry><!-- fra1 private -->
   <entry>95.211.131.137</entry><!-- nld -->
   <entry>67.207.84.5</entry><!-- nyc -->
   <entry>137.186.248.188</entry><!-- telus -->
