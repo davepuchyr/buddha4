@@ -3,9 +3,9 @@
   <short>trusted hosts</short>
   <description>trusted hosts</description>
   <entry>70.66.156.169</entry><!-- attach -->
-  <entry>83.38.191.137</entry><!-- bcn -->
+  <entry>79.150.142.167</entry><!-- bcn -->
   <entry>192.188.183.71</entry><!-- cool -->
-  <entry>58.82.134.250</entry><!-- debt -->
+  <entry>158.255.99.86</entry><!-- debt -->
   <entry>198.74.56.240</entry><!-- ewr1 public -->
   <entry>192.168.222.3</entry><!-- ewr1 private -->
   <entry>172.104.239.213</entry><!-- fra1 public-->
@@ -14,6 +14,6 @@
   <entry>67.207.84.5</entry><!-- nyc -->
   <entry>104.236.74.235</entry><!-- nyc1 public-->
   <entry>10.132.131.25</entry><!-- nyc1 private -->
-  <entry>137.186.248.188</entry><!-- telus -->
+  <entry>137.186.86.67</entry><!-- telus -->
 </ipset>
 
