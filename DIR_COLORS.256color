@@ -4,14 +4,18 @@
 # You can copy this file to .dir_colors in your $HOME directory to override
 # the system defaults.
 
-# Copyright (C) 1996-2016 Free Software Foundation, Inc.
+# Configuration file for dircolors, a utility to help you set the
+# LS_COLORS environment variable used by GNU ls with the --color option.
+
+# Copyright (C) 1996-2017 Free Software Foundation, Inc.
 # Copying and distribution of this file, with or without modification,
 # are permitted provided the copyright notice and this notice are preserved.
 
-# The keywords OPTIONS and EIGHTBIT (honored by the slackware version of
-# dircolors) are recognized but ignored.  For compatibility reasons, the
-# pattern "^COLOR.*none" is recognized as a way to disable colorization.
-# See https://bugzilla.redhat.com/1349579 for details.
+# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
+# slackware version of dircolors) are recognized but ignored.
+
+# For compatibility, the pattern "^COLOR.*none" is recognized as a way to
+# disable colorization.  See https://bugzilla.redhat.com/1349579 for details.
 
 # Below are TERM entries, which can be a glob patterns, to match
 # against the TERM environment variable to determine if it is colorizable.
@@ -99,6 +103,8 @@ EXEC 38;5;40
 .lz  38;5;9
 .lzo 38;5;9
 .xz  38;5;9
+.zst 38;5;9
+.tzst 38;5;9
 .bz2 38;5;9
 .bz  38;5;9
 .tbz 38;5;9
@@ -118,10 +124,16 @@ EXEC 38;5;40
 .7z  38;5;9
 .rz  38;5;9
 .cab 38;5;9
+.wim 38;5;9
+.swm 38;5;9
+.dwm 38;5;9
+.esd 38;5;9
 
 # image formats
 .jpg 38;5;13
 .jpeg 38;5;13
+.mjpg 38;5;13
+.mjpeg 38;5;13
 .gif 38;5;13
 .bmp 38;5;13
 .pbm 38;5;13
@@ -166,7 +178,7 @@ EXEC 38;5;40
 .cgm 38;5;13
 .emf 38;5;13
 
-# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
+# https://wiki.xiph.org/MIME_Types_and_File_Extensions
 .ogv 38;5;13
 .ogx 38;5;13
 
@@ -184,7 +196,7 @@ EXEC 38;5;40
 .ra 38;5;45
 .wav 38;5;45
 
-# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
+# https://wiki.xiph.org/MIME_Types_and_File_Extensions
 .oga 38;5;45
 .opus 38;5;45
 .spx 38;5;45

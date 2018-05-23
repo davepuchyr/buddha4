@@ -11,6 +11,7 @@
 	<dllmap dll="oci" target="libclntsh.so" os="!windows"/>
 	<dllmap dll="db2cli" target="libdb2_36.so" os="!windows"/>
 	<dllmap dll="MonoPosixHelper" target="libMonoPosixHelper.so" os="!windows" />
+	<dllmap dll="libmono-btls-shared" target="libmono-btls-shared.so" os="!windows" />
 	<dllmap dll="i:msvcrt" target="libc.so.6" os="!windows"/>
 	<dllmap dll="i:msvcrt.dll" target="libc.so.6" os="!windows"/>
 	<dllmap dll="sqlite" target="libsqlite.so.0" os="!windows"/>
@@ -31,6 +32,6 @@
 	</dllmap>
 	<dllmap dll="gdiplus" target="libgdiplus.so.0" os="!windows"/>
 	<dllmap dll="gdiplus.dll" target="libgdiplus.so.0"  os="!windows"/>
-	<dllmap dll="gdi32" target="libgdiplus.so" os="!windows"/>
-	<dllmap dll="gdi32.dll" target="libgdiplus.so" os="!windows"/>
+	<dllmap dll="gdi32" target="libgdiplus.so.0" os="!windows"/>
+	<dllmap dll="gdi32.dll" target="libgdiplus.so.0" os="!windows"/>
 </configuration>

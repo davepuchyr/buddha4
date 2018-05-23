@@ -51,6 +51,7 @@
   read or write a small subset of proven web-safe image types:
 
     <policy domain="delegate" rights="none" pattern="*" />
+    <policy domain="filter" rights="none" pattern="*" />
     <policy domain="coder" rights="none" pattern="*" />
     <policy domain="coder" rights="read|write" pattern="{GIF,JPEG,PNG,WEBP}" />
 -->
@@ -60,6 +61,7 @@
   <!-- <policy domain="system" name="memory-map" value="anonymous"/> -->
   <!-- <policy domain="system" name="max-memory-request" value="256MiB"/> -->
   <!-- <policy domain="resource" name="temporary-path" value="/tmp"/> -->
+  <!-- <policy domain="resource" name="list-length" value="128"/> -->
   <!-- <policy domain="resource" name="memory" value="2GiB"/> -->
   <!-- <policy domain="resource" name="map" value="4GiB"/> -->
   <!-- <policy domain="resource" name="width" value="10KP"/> -->

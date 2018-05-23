@@ -33,8 +33,8 @@ triggers=['<Super>space']
 x=-1
 property-icon-delay-time=500
 y=-1
-lookup-table-orientation=1
 show=0
+lookup-table-orientation=1
 xkb-icon-rgba='#415099'
 auto-hide-timeout=10000
 show-im-name=false
@@ -42,3 +42,13 @@ follow-input-cursor-when-always-shown=false
 custom-font='Sans 10'
 show-icon-on-systray=true
 use-custom-font=false
+
+[desktop/ibus/panel/emoji]
+favorite-annotations=@as []
+favorites=@as []
+hotkey=['<Control><Shift>e']
+has-partial-match=false
+partial-match-length=3
+partial-match-condition=0
+font='Monospace 16'
+lang='en'

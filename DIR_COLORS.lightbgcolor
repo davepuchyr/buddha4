@@ -4,43 +4,41 @@
 # You can copy this file to .dir_colors in your $HOME directory to override
 # the system defaults.
 
-# Copyright (C) 1996-2016 Free Software Foundation, Inc.
+# Configuration file for dircolors, a utility to help you set the
+# LS_COLORS environment variable used by GNU ls with the --color option.
+
+# Copyright (C) 1996-2017 Free Software Foundation, Inc.
 # Copying and distribution of this file, with or without modification,
 # are permitted provided the copyright notice and this notice are preserved.
 
-# The keywords OPTIONS and EIGHTBIT (honored by the slackware version of
-# dircolors) are recognized but ignored.  For compatibility reasons, the
-# pattern "^COLOR.*none" is recognized as a way to disable colorization.
-# See https://bugzilla.redhat.com/1349579 for details.
+# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
+# slackware version of dircolors) are recognized but ignored.
+
+# For compatibility, the pattern "^COLOR.*none" is recognized as a way to
+# disable colorization.  See https://bugzilla.redhat.com/1349579 for details.
 
 # Below are TERM entries, which can be a glob patterns, to match
 # against the TERM environment variable to determine if it is colorizable.
 TERM Eterm
 TERM ansi
-TERM color-xterm
+TERM *color*
 TERM con[0-9]*x[0-9]*
 TERM cons25
 TERM console
 TERM cygwin
 TERM dtterm
-TERM eterm-color
 TERM gnome
-TERM gnome-256color
 TERM hurd
 TERM jfbterm
 TERM konsole
 TERM kterm
 TERM linux
 TERM linux-c
-TERM mach-color
-TERM mach-gnu-color
 TERM mlterm
 TERM putty
-TERM putty-256color
 TERM rxvt*
 TERM screen*
 TERM st
-TERM st-256color
 TERM terminator
 TERM tmux*
 TERM vt100
@@ -116,6 +114,8 @@ EXEC 00;32
 .lz  00;31
 .lzo 00;31
 .xz  00;31
+.zst 00;31
+.tzst 00;31
 .bz2 00;31
 .bz  00;31
 .tbz 00;31
@@ -135,10 +135,16 @@ EXEC 00;32
 .7z  00;31
 .rz  00;31
 .cab 00;31
+.wim 00;31
+.swm 00;31
+.dwm 00;31
+.esd 00;31
 
 # image formats
 .jpg 00;35
 .jpeg 00;35
+.mjpg 00;35
+.mjpeg 00;35
 .gif 00;35
 .bmp 00;35
 .pbm 00;35
@@ -183,7 +189,7 @@ EXEC 00;32
 .cgm 00;35
 .emf 00;35
 
-# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
+# https://wiki.xiph.org/MIME_Types_and_File_Extensions
 .ogv 00;35
 .ogx 00;35
 
@@ -201,7 +207,7 @@ EXEC 00;32
 .ra 00;36
 .wav 00;36
 
-# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
+# https://wiki.xiph.org/MIME_Types_and_File_Extensions
 .oga 00;36
 .opus 00;36
 .spx 00;36
