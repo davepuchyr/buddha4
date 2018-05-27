@@ -9,11 +9,11 @@
 /bin/.*	system_u:object_r:bin_t:s0
 /dev/.*	system_u:object_r:device_t:s0
 /srv/.*	system_u:object_r:var_t:s0
-/var/.*	system_u:object_r:var_t:s0
-/usr/.*	system_u:object_r:usr_t:s0
 /tmp/.*	<<none>>
-/run/.*	system_u:object_r:var_run_t:s0
+/usr/.*	system_u:object_r:usr_t:s0
 /opt/.*	system_u:object_r:usr_t:s0
+/run/.*	system_u:object_r:var_run_t:s0
+/var/.*	system_u:object_r:var_t:s0
 /etc/.*	system_u:object_r:etc_t:s0
 /lib/.*	system_u:object_r:lib_t:s0
 /usr/.*\.cgi	--	system_u:object_r:httpd_sys_script_exec_t:s0
@@ -98,8 +98,8 @@
 /dev/n?z?qft[0-3]	-c	system_u:object_r:tape_device_t:s0
 /dev/s(cd|r)[^/]*	-b	system_u:object_r:removable_device_t:s0
 /usr/s?bin/gdm(3)?	--	system_u:object_r:xdm_exec_t:s0
-/dev/n?tpqic[12].*	-c	system_u:object_r:tape_device_t:s0
 /dev/n?osst[0-3].*	-c	system_u:object_r:tape_device_t:s0
+/dev/n?tpqic[12].*	-c	system_u:object_r:tape_device_t:s0
 /usr/s?bin/lightdm*	--	system_u:object_r:xdm_exec_t:s0
 /dev/n?[hs]t[0-9].*	-c	system_u:object_r:tape_device_t:s0
 /usr/s?bin/[mxgkw]dm	--	system_u:object_r:xdm_exec_t:s0
@@ -111,7 +111,6 @@
 /var/a?quota\.(user|group)	--	system_u:object_r:quota_db_t:s0
 /usr/s?bin/lxdm(-binary)?	--	system_u:object_r:xdm_exec_t:s0
 /usr/s?bin/(oo|rhc)-restorer	--	system_u:object_r:openshift_initrc_exec_t:s0
-/home/(.*/)?\.snapshots(/.*)?	system_u:object_r:snapperd_data_t:s0
 /usr/s?bin/oo-admin-ctl-gears	--	system_u:object_r:openshift_initrc_exec_t:s0
 /usr/s?bin/(oo|rhc)-cgroup-read	--	system_u:object_r:openshift_cgroup_read_exec_t:s0
 /usr/s?bin/(oo|rhc)-restorer-wrapper.sh	--	system_u:object_r:openshift_initrc_exec_t:s0
@@ -119,21 +118,22 @@
 /dev/js.*	-c	system_u:object_r:mouse_device_t:s0
 /dev/lp.*	-c	system_u:object_r:printer_device_t:s0
 /dev/cu.*	-c	system_u:object_r:tty_device_t:s0
+/dev/rb.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/rd.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/ub[a-c]	-c	system_u:object_r:usb_device_t:s0
 /dev/pg[0-3]	-c	system_u:object_r:removable_device_t:s0
 /dev/vd[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
-/dev/ht[0-1]	-b	system_u:object_r:tape_device_t:s0
 /dev/nb[^/]+	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/fd[^/]+	-b	system_u:object_r:removable_device_t:s0
+/dev/ht[0-1]	-b	system_u:object_r:tape_device_t:s0
 /dev/fb[0-9]*	-c	system_u:object_r:framebuf_device_t:s0
 /dev/sg[0-9]+	-c	system_u:object_r:scsi_generic_device_t:s0
 /dev/ss[0-9]+	-c	system_u:object_r:gpfs_device_t:s0
 /etc/rt(/.*)?	system_u:object_r:httpd_sys_rw_content_t:s0
 /bacula(/.*)?	system_u:object_r:bacula_store_t:s0
-/var/db(/.*)?	system_u:object_r:system_db_t:s0
 /export(/.*)?	system_u:object_r:usr_t:s0
 /ostree(/.*)?	system_u:object_r:usr_t:s0
+/var/db(/.*)?	system_u:object_r:system_db_t:s0
 /etc/hp(/.*)?	system_u:object_r:cupsd_etc_t:s0
 /var/yp(/.*)?	system_u:object_r:var_yp_t:s0
 /media/[^/]*/.*	<<none>>
@@ -148,43 +148,43 @@
 /bin/ksh.*	--	system_u:object_r:shell_exec_t:s0
 /dev/md/.*	--	system_u:object_r:mdadm_var_run_t:s0
 /dev/lik.*	-c	system_u:object_r:event_device_t:s0
-/dev/dlm.*	-c	system_u:object_r:dlm_control_device_t:s0
+/dev/bsr.*	-c	system_u:object_r:cpu_device_t:s0
 /dev/dsp.*	-c	system_u:object_r:sound_device_t:s0
 /dev/ptp.*	-c	system_u:object_r:clock_device_t:s0
+/dev/dlm.*	-c	system_u:object_r:dlm_control_device_t:s0
 /dev/usb.+	-c	system_u:object_r:usb_device_t:s0
 /dev/msr.*	-c	system_u:object_r:cpu_device_t:s0
 /dev/noz.*	-c	system_u:object_r:modem_device_t:s0
 /dev/par.*	-c	system_u:object_r:printer_device_t:s0
 /dev/pps.*	-c	system_u:object_r:clock_device_t:s0
 /dev/tap.*	-c	system_u:object_r:tun_tap_device_t:s0
-/dev/bsr.*	-c	system_u:object_r:cpu_device_t:s0
 /dev/hvc.*	-c	system_u:object_r:tty_device_t:s0
 /dev/adb.*	-c	system_u:object_r:tty_device_t:s0
 /dev/vbi.*	-c	system_u:object_r:v4l_device_t:s0
 /dev/cmx.*	-c	system_u:object_r:smartcard_device_t:s0
 /dev/cpu.*	-c	system_u:object_r:cpu_device_t:s0
 /dev/vtx.*	-c	system_u:object_r:v4l_device_t:s0
-/dev/md/.*	-b	system_u:object_r:fixed_disk_device_t:s0
-/dev/ram.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/mtd.*	-b	system_u:object_r:fixed_disk_device_t:s0
+/dev/ram.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/cdu.*	-b	system_u:object_r:removable_device_t:s0
+/dev/md/.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /vmlinuz.*	-l	system_u:object_r:boot_t:s0
 /dev/vcc?/.*	-c	system_u:object_r:tty_device_t:s0
 /var/NX/[^/]*	-d	unconfined_u:object_r:user_home_dir_t:s0
 /dev/tlk[0-3]	-c	system_u:object_r:v4l_device_t:s0
-/dev/vcs[^/]*	-c	system_u:object_r:tty_device_t:s0
-/dev/ip2[^/]*	-c	system_u:object_r:tty_device_t:s0
 /dev/xvc[^/]*	-c	system_u:object_r:tty_device_t:s0
+/dev/vcs[^/]*	-c	system_u:object_r:tty_device_t:s0
 /dev/i2c[^/]*	-c	system_u:object_r:tty_device_t:s0
-/dev/xvd[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
+/dev/ip2[^/]*	-c	system_u:object_r:tty_device_t:s0
 /dev/ubd[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
+/dev/xvd[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/pcd[0-3]	-b	system_u:object_r:removable_device_t:s0
 /var/NX/[^/]*	-l	unconfined_u:object_r:user_home_dir_t:s0
 /etc/ppp(/.*)?	--	system_u:object_r:pppd_etc_rw_t:s0
 /dev/mei[0-9]*	-c	system_u:object_r:mei_device_t:s0
 /dev/clp[0-9]*	-c	system_u:object_r:vfio_device_t:s0
-/dev/uio[0-9]+	-c	system_u:object_r:userio_device_t:s0
 /dev/tpm[0-9]*	-c	system_u:object_r:tpm_device_t:s0
+/dev/uio[0-9]+	-c	system_u:object_r:userio_device_t:s0
 /dev/xvc[0-9]*	-c	system_u:object_r:tty_device_t:s0
 /dev/dm-[0-9]+	-b	system_u:object_r:fixed_disk_device_t:s0
 /usr/afs(/.*)?	system_u:object_r:afs_files_t:s0
@@ -192,8 +192,8 @@
 /var/ace(/.*)?	system_u:object_r:var_auth_t:s0
 /var/rsa(/.*)?	system_u:object_r:var_auth_t:s0
 /usr/etc(/.*)?	system_u:object_r:etc_t:s0
-/var/lib(/.*)?	system_u:object_r:var_lib_t:s0
 /sandbox(/.*)?	system_u:object_r:tmp_t:s0
+/var/lib(/.*)?	system_u:object_r:var_lib_t:s0
 /dev/pts(/.*)?	<<none>>
 /opt/cvs(/.*)?	system_u:object_r:cvs_data_t:s0
 /var/cvs(/.*)?	system_u:object_r:cvs_data_t:s0
@@ -278,11 +278,11 @@
 /etc/mtab.*	--	system_u:object_r:etc_runtime_t:s0
 /etc/rndc.*	--	system_u:object_r:named_conf_t:s0
 /bin/ping.*	--	system_u:object_r:ping_exec_t:s0
-/dev/midi.*	-c	system_u:object_r:sound_device_t:s0
 /dev/dmfm.*	-c	system_u:object_r:sound_device_t:s0
+/dev/midi.*	-c	system_u:object_r:sound_device_t:s0
 /dev/nvme.*	-c	system_u:object_r:nvme_device_t:s0
-/dev/ippp.*	-c	system_u:object_r:ppp_device_t:s0
 /dev/net/.*	-c	system_u:object_r:tun_tap_device_t:s0
+/dev/ippp.*	-c	system_u:object_r:ppp_device_t:s0
 /dev/adsp.*	-c	system_u:object_r:sound_device_t:s0
 /dev/tape.*	-c	system_u:object_r:tape_device_t:s0
 /dev/bsg/.+	-c	system_u:object_r:scsi_generic_device_t:s0
@@ -290,8 +290,8 @@
 /dev/isdn.*	-c	system_u:object_r:tty_device_t:s0
 /dev/hvsi.*	-c	system_u:object_r:tty_device_t:s0
 /dev/capi.*	-c	system_u:object_r:tty_device_t:s0
-/dev/dvb/.*	-c	system_u:object_r:v4l_device_t:s0
 /dev/dri/.+	-c	system_u:object_r:dri_device_t:s0
+/dev/dvb/.*	-c	system_u:object_r:v4l_device_t:s0
 /dev/card.*	-c	system_u:object_r:xserver_misc_device_t:s0
 /dev/vbox.*	-c	system_u:object_r:xserver_misc_device_t:s0
 /dev/nvme.*	-b	system_u:object_r:nvme_device_t:s0
@@ -300,8 +300,8 @@
 /dev/cm20.*	-b	system_u:object_r:removable_device_t:s0
 /usr/tmp/.*	<<none>>
 /selinux/.*	<<none>>
-/dev/shm/.*	<<none>>
 /var/run/.*	system_u:object_r:var_run_t:s0
+/dev/shm/.*	<<none>>
 /var/tmp/.*	<<none>>
 /service/.*	system_u:object_r:svc_svc_t:s0
 /usr/lib/.*	system_u:object_r:lib_t:s0
@@ -314,9 +314,9 @@
 /dev/srnd[0-7]	-c	system_u:object_r:sound_device_t:s0
 /dev/dasd[^/]*	-c	system_u:object_r:fixed_disk_device_t:s0
 /dev/tts/[^/]*	-c	system_u:object_r:tty_device_t:s0
-/dev/ida/[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/dasd[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/drbd[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
+/dev/ida/[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
 /etc/xen/.*/.*	system_u:object_r:virt_etc_rw_t:s0
 /dev/lirc[0-9]+	-c	system_u:object_r:lirc_device_t:s0
 /dev/ipmi[0-9]+	-c	system_u:object_r:ipmi_device_t:s0
@@ -375,8 +375,8 @@
 /var/lib/[mxkwg]dm(/.*)?	system_u:object_r:xdm_var_lib_t:s0
 /usr/bin/[^/]*thumbnailer	--	system_u:object_r:thumb_exec_t:s0
 /etc/X11/[wxg]dm/Xsession	--	system_u:object_r:xsession_exec_t:s0
-/usr/lib/.*/scripts(/.*)?	system_u:object_r:bin_t:s0
 /usr/lib/.*/program(/.*)?	system_u:object_r:bin_t:s0
+/usr/lib/.*/scripts(/.*)?	system_u:object_r:bin_t:s0
 /var/lib/[sm]locate(/.*)?	system_u:object_r:locate_var_lib_t:s0
 /var/lib/[^/]+/\.ssh(/.*)?	system_u:object_r:ssh_home_t:s0
 /sbin/ip6?tables-restore.*	--	system_u:object_r:iptables_exec_t:s0
@@ -407,8 +407,8 @@
 /usr/lib/.*/program/libcomphelp4gcc3\.so	--	system_u:object_r:textrel_shlib_t:s0
 /usr/lib/[^/]*thunderbird[^/]*/thunderbird	--	system_u:object_r:bin_t:s0
 /usr/lib/.*/program/libvclplug_gen645li\.so	--	system_u:object_r:textrel_shlib_t:s0
-/usr/lib/[^/]*thunderbird[^/]*/open-browser\.sh	--	system_u:object_r:bin_t:s0
 /usr/lib/[^/]*thunderbird[^/]*/thunderbird-bin	--	system_u:object_r:bin_t:s0
+/usr/lib/[^/]*thunderbird[^/]*/open-browser\.sh	--	system_u:object_r:bin_t:s0
 /usr/lib/(virtualbox(-ose)?/)?(components/)?VBox.*\.so	--	system_u:object_r:textrel_shlib_t:s0
 /sbin/grub.*	--	system_u:object_r:bootloader_exec_t:s0
 /sbin/lilo.*	--	system_u:object_r:bootloader_exec_t:s0
@@ -422,14 +422,14 @@
 /dev/event.*	-c	system_u:object_r:event_device_t:s0
 /dev/gtrsc.*	-c	system_u:object_r:clock_device_t:s0
 /dev/usblp.*	-c	system_u:object_r:printer_device_t:s0
-/dev/radio.*	-c	system_u:object_r:v4l_device_t:s0
 /dev/smpte.*	-c	system_u:object_r:sound_device_t:s0
+/dev/radio.*	-c	system_u:object_r:v4l_device_t:s0
 /dev/mixer.*	-c	system_u:object_r:sound_device_t:s0
 /dev/rmidi.*	-c	system_u:object_r:sound_device_t:s0
 /dev/pppox.*	-c	system_u:object_r:ppp_device_t:s0
-/dev/aload.*	-c	system_u:object_r:sound_device_t:s0
-/dev/amidi.*	-c	system_u:object_r:sound_device_t:s0
 /dev/audio.*	-c	system_u:object_r:sound_device_t:s0
+/dev/amidi.*	-c	system_u:object_r:sound_device_t:s0
+/dev/aload.*	-c	system_u:object_r:sound_device_t:s0
 /dev/ttySG.*	-c	system_u:object_r:tty_device_t:s0
 /dev/vport.*	-c	system_u:object_r:virtio_device_t:s0
 /dev/vmnet.*	-c	system_u:object_r:vmware_device_t:s0
@@ -517,10 +517,10 @@
 /dev/hidraw.*	-c	system_u:object_r:usb_device_t:s0
 /dev/usbmon.+	-c	system_u:object_r:usbmon_device_t:s0
 /dev/spidev.*	-c	system_u:object_r:usb_device_t:s0
-/dev/nvidia.*	-c	system_u:object_r:xserver_misc_device_t:s0
 /dev/mpu401.*	-c	system_u:object_r:sound_device_t:s0
-/dev/amixer.*	-c	system_u:object_r:sound_device_t:s0
+/dev/nvidia.*	-c	system_u:object_r:xserver_misc_device_t:s0
 /dev/autofs.*	-c	system_u:object_r:autofs_device_t:s0
+/dev/amixer.*	-c	system_u:object_r:sound_device_t:s0
 /dev/input/.*	-c	system_u:object_r:event_device_t:s0
 /dev/usb/lp.*	-c	system_u:object_r:printer_device_t:s0
 /dev/mmcblk.*	-b	system_u:object_r:removable_device_t:s0
@@ -534,8 +534,8 @@
 /etc/passwd[-\+]?	--	system_u:object_r:passwd_file_t:s0
 /etc/locale.conf	--	system_u:object_r:locale_t:s0
 /dev/hpilo/[^/]*	-c	system_u:object_r:tty_device_t:s0
-/dev/i2o/hd[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/cciss/[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
+/dev/i2o/hd[^/]*	-b	system_u:object_r:fixed_disk_device_t:s0
 /etc/syslog.conf	system_u:object_r:syslog_conf_t:s0
 /var/run/hp.*\.pid	--	system_u:object_r:cupsd_var_run_t:s0
 /usr/Adobe/.*\.api	--	system_u:object_r:textrel_shlib_t:s0
@@ -633,9 +633,10 @@
 /dev/usb/tty.*	-c	system_u:object_r:usbtty_device_t:s0
 /dev/input/m.*	-c	system_u:object_r:mouse_device_t:s0
 /dev/mvideo/.*	-c	system_u:object_r:xserver_misc_device_t:s0
-/dev/mapper/.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /dev/etherd/.+	-b	system_u:object_r:fixed_disk_device_t:s0
+/dev/mapper/.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /lost\+found/.*	<<none>>
+/sys/fs/bpf/.*	<<none>>
 /var/log/bip.*	system_u:object_r:bitlbee_log_t:s0
 /root/\.local.*	system_u:object_r:gconf_home_t:s0
 /etc/mailman.*	system_u:object_r:mailman_data_t:s0
@@ -656,15 +657,15 @@
 /var/lib/abl(/.*)?	system_u:object_r:var_auth_t:s0
 /var/lib/rsa(/.*)?	system_u:object_r:var_auth_t:s0
 /var/ftp/bin(/.*)?	system_u:object_r:bin_t:s0
-/usr/Brother(/.*)?	system_u:object_r:bin_t:s0
 /usr/Printer(/.*)?	system_u:object_r:bin_t:s0
+/usr/Brother(/.*)?	system_u:object_r:bin_t:s0
 /usr/libexec(/.*)?	system_u:object_r:bin_t:s0
 /usr/lib/ocf(/.*)?	system_u:object_r:bin_t:s0
 /lib/upstart(/.*)?	system_u:object_r:bin_t:s0
 /etc/kde/env(/.*)?	system_u:object_r:bin_t:s0
 /etc/kde/kdm(/.*)?	system_u:object_r:bin_t:s0
-/var/ftp/etc(/.*)?	system_u:object_r:etc_t:s0
 /lib/modules(/.*)?	system_u:object_r:modules_object_t:s0
+/var/ftp/etc(/.*)?	system_u:object_r:etc_t:s0
 /ostree/repo(/.*)?	system_u:object_r:system_conf_t:s0
 /etc/unbound(/.*)?	system_u:object_r:named_conf_t:s0
 /etc/bitlbee(/.*)?	system_u:object_r:bitlbee_conf_t:s0
@@ -795,10 +796,10 @@
 /usr/sbin/rip.*	--	system_u:object_r:zebra_exec_t:s0
 /dev/misc/dlm.*	-c	system_u:object_r:dlm_control_device_t:s0
 /dev/pcfclock.*	-c	system_u:object_r:clock_device_t:s0
-/dev/input/js.*	-c	system_u:object_r:mouse_device_t:s0
 /dev/ati/card.*	-c	system_u:object_r:xserver_misc_device_t:s0
 /dev/winradio.*	-c	system_u:object_r:v4l_device_t:s0
 /dev/watchdog.*	-c	system_u:object_r:watchdog_device_t:s0
+/dev/input/js.*	-c	system_u:object_r:mouse_device_t:s0
 /dev/ataraid/.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /var/run/wsgi.*	-s	system_u:object_r:httpd_var_run_t:s0
 /var/run/mod_.*	system_u:object_r:httpd_var_run_t:s0
@@ -867,7 +868,6 @@
 /var/run/drbd(/.*)?	system_u:object_r:drbd_var_run_t:s0
 /etc/cfingerd(/.*)?	system_u:object_r:fingerd_etc_t:s0
 /var/log/fsck(/.*)?	system_u:object_r:fsadm_log_t:s0
-/var/lib/gear(/.*)?	system_u:object_r:gear_var_lib_t:s0
 /etc/glusterd(/.*)?	system_u:object_r:glusterd_conf_t:s0
 /root/\.config(/.*)?	system_u:object_r:config_home_t:s0
 /root/\.gnome2(/.*)?	system_u:object_r:gnome_home_t:s0
@@ -990,8 +990,8 @@
 /usr/afs/db/vl.*	--	system_u:object_r:afs_vl_db_t:s0
 /var/log/acpid.*	--	system_u:object_r:apmd_log_t:s0
 /var/db/shadow.*	--	system_u:object_r:shadow_t:s0
-/usr/lib/dpkg/.+	--	system_u:object_r:bin_t:s0
 /usr/lib/gvfs/.*	--	system_u:object_r:bin_t:s0
+/usr/lib/dpkg/.+	--	system_u:object_r:bin_t:s0
 /etc/lxdm/Post.*	--	system_u:object_r:bin_t:s0
 /var/log/named.*	--	system_u:object_r:named_log_t:s0
 /usr/sbin/grub.*	--	system_u:object_r:bootloader_exec_t:s0
@@ -1075,8 +1075,8 @@
 /etc/netplug\.d(/.*)?	system_u:object_r:bin_t:s0
 /etc/X11/xinit(/.*)?	system_u:object_r:bin_t:s0
 /lib/readahead(/.*)?	system_u:object_r:bin_t:s0
-/dev/oracleasm(/.*)?	system_u:object_r:oracleasmfs_t:s0
 /dev/hugepages(/.*)?	<<none>>
+/dev/oracleasm(/.*)?	system_u:object_r:oracleasmfs_t:s0
 /var/lib/bcfg2(/.*)?	system_u:object_r:bcfg2_var_lib_t:s0
 /var/run/named(/.*)?	system_u:object_r:named_var_run_t:s0
 /etc/bluetooth(/.*)?	system_u:object_r:bluetooth_conf_t:s0
@@ -1141,7 +1141,7 @@
 /var/log/redis(/.*)?	system_u:object_r:redis_log_t:s0
 /var/run/redis(/.*)?	system_u:object_r:redis_var_run_t:s0
 /var/lib/ricci(/.*)?	system_u:object_r:ricci_var_lib_t:s0
-/usr/share/rpm(/.*)?	system_u:object_r:rpm_var_lib_t:s0
+/usr/share/rpm(/.*)?	system_u:object_r:usr_t:s0
 /var/cache/yum(/.*)?	system_u:object_r:rpm_var_cache_t:s0
 /var/cache/dnf(/.*)?	system_u:object_r:rpm_var_cache_t:s0
 /var/log/rwhod(/.*)?	system_u:object_r:rwho_log_t:s0
@@ -1614,7 +1614,6 @@
 /usr/lib/selinux(/.*)?	system_u:object_r:policy_src_t:s0
 /var/lib/selinux(/.*)?	system_u:object_r:semanage_store_t:s0
 /var/run/setrans(/.*)?	system_u:object_r:setrans_var_run_t:s0
-/home/\.snapshots(/.*)?	system_u:object_r:snapperd_data_t:s0
 /var/spool/spamd(/.*)?	system_u:object_r:spamd_spool_t:s0
 /usr/share/squid(/.*)?	system_u:object_r:squid_conf_t:s0
 /var/cache/squid(/.*)?	system_u:object_r:squid_cache_t:s0
@@ -1643,6 +1642,7 @@
 /usr/share/tucan.*/tucan.py	--	system_u:object_r:bin_t:s0
 /usr/lib/mozilla[^/]*/reg.+	--	system_u:object_r:mozilla_exec_t:s0
 /var/lib/amanda/[^/]+(/.*)?	system_u:object_r:amanda_data_t:s0
+/usr/lib/modules(/.*)/vmlinuz	--	system_u:object_r:usr_t:s0
 /usr/lib/mailman.*/cgi-bin/.*	--	system_u:object_r:mailman_cgi_exec_t:s0
 /usr/lib/cedega/.+\.so(\.[^/]*)*	--	system_u:object_r:textrel_shlib_t:s0
 /usr/lib/libADM5.*\.so(\.[^/]*)*	--	system_u:object_r:textrel_shlib_t:s0
@@ -1663,6 +1663,7 @@
 /usr/lib/oracle/.*/lib/libnnz10\.so	--	system_u:object_r:textrel_shlib_t:s0
 /usr/lib/oracle/.*/lib/libnnz.*\.so	--	system_u:object_r:textrel_shlib_t:s0
 /usr/lib/mailman.*/scripts/mailman	--	system_u:object_r:mailman_mail_exec_t:s0
+/usr/lib/modules(/.*)/initramfs.img	--	system_u:object_r:usr_t:s0
 /usr/lib/mailman.*/bin/mm-handler.*	--	system_u:object_r:mailman_mail_exec_t:s0
 /usr/lib/oracle/.*/lib/libclntsh\.so(\.[^/]*)*	system_u:object_r:textrel_shlib_t:s0
 /usr/libexec/kde(3|4)/ksysguardprocesslist_helper	--	system_u:object_r:gnomesystemmm_exec_t:s0
@@ -1682,6 +1683,7 @@
 /var/run/glusterd.*	--	system_u:object_r:glusterd_var_run_t:s0
 /usr/bin/pinentry.*	--	system_u:object_r:pinentry_exec_t:s0
 /etc/rc\.d/init\.d/.*	--	system_u:object_r:initrc_exec_t:s0
+/var/run/ebtables.*	--	system_u:object_r:iptables_var_run_t:s0
 /usr/lib/libjs\.so.*	--	system_u:object_r:textrel_shlib_t:s0
 /usr/lib/lvm-200/.*	--	system_u:object_r:lvm_exec_t:s0
 /etc/modules\.conf.*	--	system_u:object_r:modules_conf_t:s0
@@ -1749,6 +1751,7 @@
 /etc/dhcp/scripts(/.*)?	system_u:object_r:bin_t:s0
 /etc/kde/shutdown(/.*)?	system_u:object_r:bin_t:s0
 /etc/acpi/actions(/.*)?	system_u:object_r:bin_t:s0
+/usr/lib/sysimage(/.*)?	system_u:object_r:usr_t:s0
 /lib/udev/devices(/.*)?	system_u:object_r:device_t:s0
 /var/named/slaves(/.*)?	system_u:object_r:named_cache_t:s0
 /var/named/chroot(/.*)?	system_u:object_r:named_conf_t:s0
@@ -1992,6 +1995,7 @@
 /var/lib/smokeping(/.*)?	system_u:object_r:smokeping_var_lib_t:s0
 /var/run/smokeping(/.*)?	system_u:object_r:smokeping_var_run_t:s0
 /var/lib/wifiroamd(/.*)?	system_u:object_r:dhcpc_state_t:s0
+/run/systemd/units(/.*)?	system_u:object_r:systemd_unit_file_t:s0
 /var/run/initramfs(/.*)?	<<none>>
 /var/cache/libvirt(/.*)?	system_u:object_r:virt_cache_t:s0
 /var/lib/webalizer(/.*)?	system_u:object_r:webalizer_var_lib_t:s0
@@ -2057,6 +2061,7 @@
 /root/\.ICEauthority.*	--	system_u:object_r:iceauth_home_t:s0
 /etc/X11/wdm/Xsetup.*	--	system_u:object_r:xsession_exec_t:s0
 /dev/input/keyboard.*	-c	system_u:object_r:event_device_t:s0
+/etc/init\.d/vboxdrv.*	system_u:object_r:bin_t:s0
 /var/run/certmaster.*	system_u:object_r:certmaster_var_run_t:s0
 /var/run/certmonger.*	system_u:object_r:certmonger_var_run_t:s0
 /var/log/turboprint.*	system_u:object_r:cupsd_log_t:s0
@@ -2098,7 +2103,6 @@
 /var/lib/dspam/data(/.*)?	system_u:object_r:dspam_rw_content_t:s0
 /var/cache/ipmiseld(/.*)?	system_u:object_r:freeipmi_var_cache_t:s0
 /var/cache/app-info(/.*)?	system_u:object_r:fwupd_cache_t:s0
-/var/lib/containers(/.*)?	system_u:object_r:gear_var_lib_t:s0
 /etc/openldap/certs(/.*)?	system_u:object_r:slapd_cert_t:s0
 /var/cache/ldconfig(/.*)?	system_u:object_r:ldconfig_cache_t:s0
 /var/run/timemaster(/.*)?	system_u:object_r:timemaster_var_run_t:s0
@@ -2203,8 +2207,8 @@
 /usr/lib/valgrind/vg.*\.so	--	system_u:object_r:textrel_shlib_t:s0
 /usr/lib/virtualbox/.*\.so	--	system_u:object_r:textrel_shlib_t:s0
 /usr/share/bugzilla/.*\.cgi	--	system_u:object_r:bugzilla_script_exec_t:s0
-/dev/infiniband/umad[0-9]+	-c	system_u:object_r:infiniband_mgmt_device_t:s0
 /dev/infiniband/issm[0-9]+	-c	system_u:object_r:infiniband_mgmt_device_t:s0
+/dev/infiniband/umad[0-9]+	-c	system_u:object_r:infiniband_mgmt_device_t:s0
 /dev/infiniband/issm[0-9]+	-b	system_u:object_r:infiniband_mgmt_device_t:s0
 /dev/infiniband/umad[0-9]+	-b	system_u:object_r:infiniband_mgmt_device_t:s0
 /srv/gallery2/smarty(/.*)?	system_u:object_r:httpd_sys_rw_content_t:s0
@@ -2219,6 +2223,7 @@
 /etc/mcelog/triggers(/.*)?	system_u:object_r:bin_t:s0
 /etc/dhcp/dhclient\.d(/.*)?	system_u:object_r:bin_t:s0
 /emul/ia32-linux/bin(/.*)?	system_u:object_r:bin_t:s0
+/usr/lib/ostree-boot(/.*)?	system_u:object_r:usr_t:s0
 /var/lib/boinc/slots(/.*)?	system_u:object_r:boinc_project_var_lib_t:s0
 /etc/cups/interfaces(/.*)?	system_u:object_r:cupsd_interface_t:s0
 /opt/gutenprint/ppds(/.*)?	system_u:object_r:cupsd_rw_etc_t:s0
@@ -2233,6 +2238,7 @@
 /var/spool/opendmarc(/.*)?	system_u:object_r:dkim_milter_data_t:s0
 /usr/share/ssl/certs(/.*)?	system_u:object_r:cert_t:s0
 /usr/share/X11/fonts(/.*)?	system_u:object_r:fonts_t:s0
+/var/lib/letsencrypt(/.*)?	system_u:object_r:cert_t:s0
 /var/spool/mqueue\.in(/.*)?	system_u:object_r:mqueue_spool_t:s0
 /etc/openvpn/scripts(/.*)?	system_u:object_r:openvpn_unconfined_script_exec_t:s0
 /var/lib/openvswitch(/.*)?	system_u:object_r:openvswitch_var_lib_t:s0
@@ -2250,6 +2256,7 @@
 /var/run/stap-server(/.*)?	system_u:object_r:stapserver_var_run_t:s0
 /var/subversion/repo(/.*)?	system_u:object_r:svnserve_content_t:s0
 /srv/loopback-device(/.*)?	system_u:object_r:swift_data_t:s0
+/run/systemd/resolve(/.*)?	system_u:object_r:systemd_resolved_var_run_t:s0
 /var/run/libvirt/lxc(/.*)?	system_u:object_r:virt_lxc_var_run_t:s0
 /usr/libexec/qemu-ga(/.*)?	system_u:object_r:virt_qemu_ga_exec_t:s0
 /etc/X11/xorg\.conf\.d(/.*)?	system_u:object_r:xserver_etc_t:s0
@@ -2381,6 +2388,7 @@
 /etc/rc\.d/init\.d/ciped.*	--	system_u:object_r:ciped_initrc_exec_t:s0
 /etc/cups/classes\.conf.*	--	system_u:object_r:cupsd_rw_etc_t:s0
 /etc/rc\.d/init\.d/cyrus.*	--	system_u:object_r:cyrus_initrc_exec_t:s0
+/var/run/agetty\.reload.*	--	system_u:object_r:getty_var_run_t:s0
 /usr/lib/gnupg/gpgkeys.*	--	system_u:object_r:gpg_helper_exec_t:s0
 /usr/libexec/dcc/stop-.*	--	system_u:object_r:initrc_exec_t:s0
 /usr/lib/libGLdispatch.*	--	system_u:object_r:textrel_shlib_t:s0
@@ -2411,8 +2419,8 @@
 /var/lib/roundcubemail(/.*)?	system_u:object_r:httpd_var_lib_t:s0
 /var/log/roundcubemail(/.*)?	system_u:object_r:httpd_log_t:s0
 /var/lib/avahi-autoipd(/.*)?	system_u:object_r:avahi_var_lib_t:s0
-/usr/share/wicd/daemon(/.*)?	system_u:object_r:bin_t:s0
 /usr/share/hal/scripts(/.*)?	system_u:object_r:bin_t:s0
+/usr/share/wicd/daemon(/.*)?	system_u:object_r:bin_t:s0
 /etc/PackageKit/events(/.*)?	system_u:object_r:bin_t:s0
 /opt/google/talkplugin(/.*)?	system_u:object_r:bin_t:s0
 /lib/security/pam_krb5(/.*)?	system_u:object_r:bin_t:s0
@@ -2455,6 +2463,7 @@
 /var/run/systemd/seats(/.*)?	system_u:object_r:systemd_logind_var_run_t:s0
 /var/run/systemd/users(/.*)?	system_u:object_r:systemd_logind_var_run_t:s0
 /var/run/systemd/netif(/.*)?	system_u:object_r:systemd_networkd_var_run_t:s0
+/var/run/systemd/units(/.*)?	system_u:object_r:systemd_unit_file_t:s0
 /var/run/uml-utilities(/.*)?	system_u:object_r:uml_switch_var_run_t:s0
 /var/lib/zarafa-webapp(/.*)?	system_u:object_r:zarafa_var_lib_t:s0
 /usr/lib/google-earth/.*\.so.*	--	system_u:object_r:textrel_shlib_t:s0
@@ -2462,8 +2471,8 @@
 /usr/lib/xorg/libGL\.so(\.[^/]*)*	--	system_u:object_r:textrel_shlib_t:s0
 /usr/share/Pegasus/mof(/.*)?/.*\.mof	system_u:object_r:pegasus_mof_t:s0
 /usr/share/doc/mailman.*/mm-handler.*	--	system_u:object_r:mailman_mail_exec_t:s0
-/usr/lib/vmware-tools/(s)?bin32(/.*)?	system_u:object_r:bin_t:s0
 /usr/lib/vmware-tools/(s)?bin64(/.*)?	system_u:object_r:bin_t:s0
+/usr/lib/vmware-tools/(s)?bin32(/.*)?	system_u:object_r:bin_t:s0
 /var/mailman/pythonlib(/.*)?/.+\.so(\..*)?	--	system_u:object_r:lib_t:s0
 /var/log/php_errors\.log.*	--	system_u:object_r:httpd_log_t:s0
 /var/log/apcupsd\.events.*	--	system_u:object_r:apcupsd_log_t:s0
@@ -2501,6 +2510,7 @@
 /var/cache/abrt-retrace(/.*)?	system_u:object_r:abrt_retrace_cache_t:s0
 /var/spool/abrt-retrace(/.*)?	system_u:object_r:abrt_retrace_spool_t:s0
 /usr/share/doc/ghc/html(/.*)?	system_u:object_r:httpd_sys_content_t:s0
+/var/log/shibboleth-www(/.*)?	system_u:object_r:httpd_sys_rw_content_t:s0
 /var/spool/squirrelmail(/.*)?	system_u:object_r:squirrelmail_spool_t:s0
 /var/www/gallery/albums(/.*)?	system_u:object_r:httpd_sys_rw_content_t:s0
 /var/www/cgi-bin/apcgui(/.*)?	system_u:object_r:apcupsd_cgi_script_exec_t:s0
@@ -2642,8 +2652,8 @@
 /usr/share/turboprint/lib(/.*)?	--	system_u:object_r:bin_t:s0
 /var/cache/retrace-server(/.*)?	system_u:object_r:abrt_retrace_cache_t:s0
 /var/spool/retrace-server(/.*)?	system_u:object_r:abrt_retrace_spool_t:s0
-/usr/share/shorewall-lite(/.*)?	system_u:object_r:bin_t:s0
 /usr/share/shorewall-perl(/.*)?	system_u:object_r:bin_t:s0
+/usr/share/shorewall-lite(/.*)?	system_u:object_r:bin_t:s0
 /var/lib/asterisk/agi-bin(/.*)?	system_u:object_r:bin_t:s0
 /usr/linuxprinter/filters(/.*)?	system_u:object_r:bin_t:s0
 /usr/lib/netsaint/plugins(/.*)?	system_u:object_r:bin_t:s0
@@ -2651,7 +2661,6 @@
 /var/named/chroot/var/tmp(/.*)?	system_u:object_r:named_cache_t:s0
 /var/lib/tftpboot/aarch64(/.*)?	system_u:object_r:cobbler_var_lib_t:s0
 /var/lib/tftpboot/images2(/.*)?	system_u:object_r:cobbler_var_lib_t:s0
-/var/lib/containers/units(/.*)?	system_u:object_r:gear_unit_file_t:s0
 /var/cache/gitweb-caching(/.*)?	system_u:object_r:git_rw_content_t:s0
 /var/www/cgi-bin/keystone(/.*)?	system_u:object_r:keystone_cgi_script_exec_t:s0
 /var/named/chroot/usr/lib(/.*)?	system_u:object_r:lib_t:s0
@@ -2682,8 +2691,8 @@
 /usr/lib/udev/devices/net/.*	-c	system_u:object_r:tun_tap_device_t:s0
 /usr/lib/udev/devices/loop.*	-b	system_u:object_r:fixed_disk_device_t:s0
 /var/run/dirsrv/admin-serv.*	system_u:object_r:httpd_var_run_t:s0
-/usr/lib/udev/devices/shm/.*	<<none>>
 /var/log/audit/lost\+found/.*	<<none>>
+/usr/lib/udev/devices/shm/.*	<<none>>
 /usr/var/krb5kdc/principal.*	system_u:object_r:krb5kdc_principal_t:s0
 /usr/lib/pysieved/pysieved.*\.py	--	system_u:object_r:inetd_child_exec_t:s0
 /usr/lib/xorg/modules/dri/.+\.so	--	system_u:object_r:textrel_shlib_t:s0
@@ -2694,10 +2703,10 @@
 /var/opt/rh/rh-nginx18/log(/.*)?	system_u:object_r:httpd_log_t:s0
 /var/log/dirsrv/admin-serv(/.*)?	system_u:object_r:httpd_log_t:s0
 /usr/share/awstats/wwwroot(/.*)?	system_u:object_r:awstats_content_t:s0
+/usr/lib/nfs-utils/scripts(/.*)?	system_u:object_r:bin_t:s0
 /usr/share/shorewall-shell(/.*)?	system_u:object_r:bin_t:s0
 /usr/share/shorewall6-lite(/.*)?	system_u:object_r:bin_t:s0
 /usr/share/vhostmd/scripts(/.*)?	system_u:object_r:bin_t:s0
-/usr/lib/nfs-utils/scripts(/.*)?	system_u:object_r:bin_t:s0
 /usr/lib/debug/usr/libexec(/.*)?	system_u:object_r:bin_t:s0
 /etc/ConsoleKit/run-seat\.d(/.*)?	system_u:object_r:bin_t:s0
 /usr/lib/courier/rootcerts(/.*)?	system_u:object_r:courier_etc_t:s0
@@ -2800,8 +2809,8 @@
 /etc/opt/rh/rh-nginx18/nginx(/.*)?	system_u:object_r:httpd_config_t:s0
 /var/lib/stickshift/\.httpd\.d(/.*)?	system_u:object_r:httpd_config_t:s0
 /var/www/html/nextcloud/data(/.*)?	system_u:object_r:httpd_sys_rw_content_t:s0
-/usr/share/denyhosts/plugins(/.*)?	system_u:object_r:bin_t:s0
 /usr/share/denyhosts/scripts(/.*)?	system_u:object_r:bin_t:s0
+/usr/share/denyhosts/plugins(/.*)?	system_u:object_r:bin_t:s0
 /emul/ia32-linux/usr/libexec(/.*)?	system_u:object_r:bin_t:s0
 /usr/lib/dirsrv/dsgw-cgi-bin(/.*)?	system_u:object_r:dirsrvadmin_script_exec_t:s0
 /usr/share/ghostscript/fonts(/.*)?	system_u:object_r:fonts_t:s0
@@ -2811,7 +2820,6 @@
 /var/lib/imagefactory/images(/.*)?	system_u:object_r:virt_image_t:s0
 /var/spool/zoneminder-upload(/.*)?	system_u:object_r:zoneminder_spool_t:s0
 /usr/lib/pgsql/test/regress/.*\.so.*	--	system_u:object_r:lib_t:s0
-/usr/lib/systemd/system/gear.service	--	system_u:object_r:gear_unit_file_t:s0
 /lib/systemd/system/nxserver.service	--	system_u:object_r:nx_unit_file_t:s0
 /usr/lib/systemd/system/virt.*\.service	--	system_u:object_r:virtd_unit_file_t:s0
 /usr/lib/systemd/system/lvm2.*\.service	system_u:object_r:lvm_unit_file_t:s0
@@ -2946,6 +2954,8 @@
 /usr/lib/systemd/system/usbmuxd.*	--	system_u:object_r:usbmuxd_unit_file_t:s0
 /var/named/chroot/var/run/named.*	system_u:object_r:named_var_run_t:s0
 /var/kerberos/krb5kdc/principal.*	system_u:object_r:krb5kdc_principal_t:s0
+/usr/lib/virt-sysprep/firstboot.sh	--	system_u:object_r:virtd_exec_t:s0
+/usr/libexec/iptables/ip6tables.init	--	system_u:object_r:iptables_exec_t:s0
 /var/kerberos/krb5kdc/principal.*\.ok	system_u:object_r:krb5kdc_lock_t:s0
 /var/lib/clamav-unofficial-sigs(/.*)?	system_u:object_r:antivirus_db_t:s0
 /opt/gutenprint/cups/lib/filter(/.*)?	system_u:object_r:bin_t:s0
@@ -3011,6 +3021,7 @@
 /usr/share/wordpress/wp-includes/.*\.php	--	system_u:object_r:httpd_sys_script_exec_t:s0
 /usr/lib/ConsoleKit/run-session\.d(/.*)?	system_u:object_r:bin_t:s0
 /var/cache/ipmimonitoringsdrcache(/.*)?	system_u:object_r:freeipmi_var_cache_t:s0
+/usr/lib/systemd/system/pkcsslotd.service	system_u:object_r:pkcs_slotd_unit_file_t:s0
 /usr/lib/ADM_plugins/videoFilter/.*\.so(\.[^/]*)*	--	system_u:object_r:textrel_shlib_t:s0
 /usr/lib/systemd/system/bumblebeed.*	--	system_u:object_r:bumblebee_unit_file_t:s0
 /usr/lib/systemd/system/cloud-init.*	--	system_u:object_r:cloud_init_unit_file_t:s0
@@ -3136,6 +3147,7 @@
 /usr/lib/policykit/polkit-resolve-exe-helper.*	--	system_u:object_r:policykit_resolve_exec_t:s0
 /usr/libexec/glusterfs/events/glustereventsd.py	--	system_u:object_r:glusterd_exec_t:s0
 /opt/OpenPrinting-Gutenprint/cups/lib/filter(/.*)?	system_u:object_r:bin_t:s0
+/usr/lib/systemd/system-generators/cloud-init.*	system_u:object_r:cloud_init_exec_t:s0
 /usr/share/mirrormanager/server/mirrormanager(/.*)?	system_u:object_r:mirrormanager_exec_t:s0
 /usr/share/gedit-2/plugins/externaltools/tools(/.*)?	system_u:object_r:bin_t:s0
 /usr/lib/systemd/system/openstack-cinder-backup.*	--	system_u:object_r:cinder_backup_unit_file_t:s0
@@ -3181,29 +3193,29 @@
 /dev/pts	-d	system_u:object_r:devpts_t:s0
 /usr/tmp	-d	system_u:object_r:tmp_t:s0
 /selinux	-d	<<none>>
-/dev/shm	-d	system_u:object_r:tmpfs_t:s0
 /var/run	-d	system_u:object_r:var_run_t:s0
 /var/tmp	-d	system_u:object_r:tmp_t:s0
+/dev/shm	-d	system_u:object_r:tmpfs_t:s0
 /service	-d	system_u:object_r:svc_svc_t:s0
 /usr/lib	-d	system_u:object_r:lib_t:s0
 /var/log	-d	system_u:object_r:var_log_t:s0
 /etc/ppp	-d	system_u:object_r:pppd_etc_t:s0
 /etc/xen	-d	system_u:object_r:virt_etc_t:s0
 /dev/mem	-c	system_u:object_r:memory_device_t:s0
-/dev/ksm	-c	system_u:object_r:ksm_device_t:s0
 /dev/kvm	-c	system_u:object_r:kvm_device_t:s0
+/dev/ksm	-c	system_u:object_r:ksm_device_t:s0
 /dev/jbm	-c	system_u:object_r:mouse_device_t:s0
 /dev/gfx	-c	system_u:object_r:xserver_misc_device_t:s0
 /dev/smu	-c	system_u:object_r:power_device_t:s0
-/dev/pmu	-c	system_u:object_r:power_device_t:s0
 /dev/kfd	-c	system_u:object_r:hsa_device_t:s0
+/dev/pmu	-c	system_u:object_r:power_device_t:s0
 /dev/ppp	-c	system_u:object_r:ppp_device_t:s0
 /dev/tgt	-c	system_u:object_r:scsi_generic_device_t:s0
 /dev/lvm	-c	system_u:object_r:fixed_disk_device_t:s0
 /dev/tty	-c	system_u:object_r:devtty_t:s0
 /selinux	-l	system_u:object_r:security_t:s0
-/var/run	-l	system_u:object_r:var_run_t:s0
 /var/tmp	-l	system_u:object_r:tmp_t:s0
+/var/run	-l	system_u:object_r:var_run_t:s0
 /dev/log	-l	system_u:object_r:devlog_t:s0
 /bin/mksh	--	system_u:object_r:shell_exec_t:s0
 /bin/sash	--	system_u:object_r:shell_exec_t:s0
@@ -3223,19 +3235,19 @@
 /var/lock	-d	system_u:object_r:var_lock_t:s0
 /tftpboot	-d	system_u:object_r:tftpdir_t:s0
 /dev/mice	-c	system_u:object_r:mouse_device_t:s0
-/dev/kmsg	-c	system_u:object_r:kmsg_device_t:s0
 /dev/kmem	-c	system_u:object_r:memory_device_t:s0
+/dev/kmsg	-c	system_u:object_r:kmsg_device_t:s0
 /dev/beep	-c	system_u:object_r:sound_device_t:s0
 /dev/i915	-c	system_u:object_r:dri_device_t:s0
 /dev/hpet	-c	system_u:object_r:clock_device_t:s0
 /dev/full	-c	system_u:object_r:null_device_t:s0
-/dev/vhci	-c	system_u:object_r:vhost_device_t:s0
 /dev/vmci	-c	system_u:object_r:vmci_device_t:s0
+/dev/vhci	-c	system_u:object_r:vhost_device_t:s0
 /dev/null	-c	system_u:object_r:null_device_t:s0
 /dev/port	-c	system_u:object_r:memory_device_t:s0
 /dev/3dfx	-c	system_u:object_r:xserver_misc_device_t:s0
-/dev/fuse	-c	system_u:object_r:fuse_device_t:s0
 /dev/ptmx	-c	system_u:object_r:ptmx_t:s0
+/dev/fuse	-c	system_u:object_r:fuse_device_t:s0
 /dev/zero	-c	system_u:object_r:zero_device_t:s0
 /dev/uhid	-c	system_u:object_r:uhid_device_t:s0
 /dev/sjcd	-b	system_u:object_r:removable_device_t:s0
@@ -3249,8 +3261,8 @@
 /bin/login	--	system_u:object_r:login_exec_t:s0
 /bin/bash2	--	system_u:object_r:shell_exec_t:s0
 /etc/cmtab	--	system_u:object_r:etc_runtime_t:s0
-/\.autofsck	--	system_u:object_r:etc_runtime_t:s0
 /forcefsck	--	system_u:object_r:etc_runtime_t:s0
+/\.autofsck	--	system_u:object_r:etc_runtime_t:s0
 /sbin/zipl	--	system_u:object_r:bootloader_exec_t:s0
 /sbin/ccsd	--	system_u:object_r:ccs_exec_t:s0
 /bin/dmesg	--	system_u:object_r:dmesg_exec_t:s0
@@ -3295,6 +3307,7 @@
 /sbin/udevd	--	system_u:object_r:udev_exec_t:s0
 /usr/afs/db	-d	system_u:object_r:afs_dbdir_t:s0
 /lost\+found	-d	system_u:object_r:lost_found_t:s0
+/sys/fs/bpf	-d	system_u:object_r:bpf_t:s0
 /dev/logibm	-c	system_u:object_r:mouse_device_t:s0
 /dev/mcelog	-c	system_u:object_r:kmsg_device_t:s0
 /dev/efirtc	-c	system_u:object_r:clock_device_t:s0
@@ -3302,8 +3315,8 @@
 /dev/vc-mem	-c	system_u:object_r:memory_device_t:s0
 /dev/uinput	-c	system_u:object_r:event_device_t:s0
 /dev/sonypi	-c	system_u:object_r:v4l_device_t:s0
-/dev/rfkill	-c	system_u:object_r:wireless_device_t:s0
 /dev/random	-c	system_u:object_r:random_device_t:s0
+/dev/rfkill	-c	system_u:object_r:wireless_device_t:s0
 /dev/oldmem	-c	system_u:object_r:memory_device_t:s0
 /dev/opengl	-c	system_u:object_r:xserver_misc_device_t:s0
 /dev/radeon	-c	system_u:object_r:dri_device_t:s0
@@ -3403,11 +3416,11 @@
 /sbin/apcupsd	--	system_u:object_r:apcupsd_exec_t:s0
 /usr/sbin/bat	--	system_u:object_r:bacula_admin_exec_t:s0
 /var/qmail/rc	--	system_u:object_r:bin_t:s0
+/usr/bin/sash	--	system_u:object_r:shell_exec_t:s0
 /usr/bin/tcsh	--	system_u:object_r:shell_exec_t:s0
 /usr/bin/yash	--	system_u:object_r:shell_exec_t:s0
-/usr/bin/sash	--	system_u:object_r:shell_exec_t:s0
-/usr/bin/mksh	--	system_u:object_r:shell_exec_t:s0
 /usr/bin/fish	--	system_u:object_r:shell_exec_t:s0
+/usr/bin/mksh	--	system_u:object_r:shell_exec_t:s0
 /usr/bin/bash	--	system_u:object_r:shell_exec_t:s0
 /sbin/nologin	--	system_u:object_r:shell_exec_t:s0
 /var/\.updated	--	system_u:object_r:etc_runtime_t:s0
@@ -3432,7 +3445,6 @@
 /usr/bin/kolf	--	system_u:object_r:games_exec_t:s0
 /usr/bin/kpat	--	system_u:object_r:games_exec_t:s0
 /usr/bin/micq	--	system_u:object_r:games_exec_t:s0
-/usr/bin/gear	--	system_u:object_r:gear_exec_t:s0
 /usr/sbin/gpm	--	system_u:object_r:gpm_exec_t:s0
 /bin/hostname	--	system_u:object_r:hostname_exec_t:s0
 /sbin/upstart	--	system_u:object_r:init_exec_t:s0
@@ -3512,8 +3524,8 @@
 /root/restore	-d	system_u:object_r:amanda_recover_dir_t:s0
 /var/tmp-inst	-d	system_u:object_r:tmp_t:s0
 /dev/mergemem	-c	system_u:object_r:memory_device_t:s0
-/dev/ecryptfs	-c	system_u:object_r:ecryptfs_device_t:s0
 /dev/inportbm	-c	system_u:object_r:mouse_device_t:s0
+/dev/ecryptfs	-c	system_u:object_r:ecryptfs_device_t:s0
 /dev/graphics	-c	system_u:object_r:xserver_misc_device_t:s0
 /dev/snapshot	-c	system_u:object_r:apm_bios_t:s0
 /dev/pc110pad	-c	system_u:object_r:mouse_device_t:s0
@@ -3522,9 +3534,9 @@
 /dev/z90crypt	-c	system_u:object_r:crypt_device_t:s0
 /dev/vrtpanel	-c	system_u:object_r:mouse_device_t:s0
 /dev/xconsole	-p	system_u:object_r:xconsole_device_t:s0
-/var/\.journal	<<none>>
-/tmp/\.journal	<<none>>
 /usr/\.journal	<<none>>
+/tmp/\.journal	<<none>>
+/var/\.journal	<<none>>
 /root/\.shosts	system_u:object_r:ssh_home_t:s0
 /usr/sbin/afsd	--	system_u:object_r:afs_exec_t:s0
 /usr/sbin/aide	--	system_u:object_r:aide_exec_t:s0
@@ -3665,15 +3677,15 @@
 /usr/bin/xauth	--	system_u:object_r:xauth_exec_t:s0
 /usr/sbin/bgpd	--	system_u:object_r:zebra_exec_t:s0
 /var/qmail/bin	-d	system_u:object_r:bin_t:s0
+/sys/fs/pstore	-d	system_u:object_r:pstore_t:s0
 /sys/fs/cgroup	-d	system_u:object_r:cgroup_t:s0
 /dev/hugepages	-d	system_u:object_r:hugetlbfs_t:s0
-/sys/fs/pstore	-d	system_u:object_r:pstore_t:s0
 /dev/microcode	-c	system_u:object_r:cpu_device_t:s0
 /dev/hw_random	-c	system_u:object_r:random_device_t:s0
 /dev/sequencer	-c	system_u:object_r:sound_device_t:s0
-/dev/net/vhost	-c	system_u:object_r:vhost_device_t:s0
 /dev/mmetfgrab	-c	system_u:object_r:scanner_device_t:s0
 /dev/monwriter	-c	system_u:object_r:monitor_device_t:s0
+/dev/net/vhost	-c	system_u:object_r:vhost_device_t:s0
 /dev/vhost-net	-c	system_u:object_r:vhost_device_t:s0
 /var/run/ldapi	-s	system_u:object_r:slapd_var_run_t:s0
 /etc/localtime	-l	system_u:object_r:locale_t:s0
@@ -3851,8 +3863,9 @@
 /dev/sequencer2	-c	system_u:object_r:sound_device_t:s0
 /dev/usb/rio500	-c	system_u:object_r:removable_device_t:s0
 /dev/input/mice	-c	system_u:object_r:mouse_device_t:s0
-/dev/xen/evtchn	-c	system_u:object_r:xen_device_t:s0
 /dev/xen/gntdev	-c	system_u:object_r:xen_device_t:s0
+/dev/xen/xenbus	-c	system_u:object_r:xen_device_t:s0
+/dev/xen/evtchn	-c	system_u:object_r:xen_device_t:s0
 /dev/cachefiles	-c	system_u:object_r:cachefiles_dev_t:s0
 /etc/dcc/dccifd	-s	system_u:object_r:dccifd_var_run_t:s0
 /var/run/zarafa	-s	system_u:object_r:zarafa_server_var_run_t:s0
@@ -4014,10 +4027,10 @@
 /sbin/unix_verify	--	system_u:object_r:chkpwd_exec_t:s0
 /usr/sbin/nologin	--	system_u:object_r:shell_exec_t:s0
 /usr/libexec/sesh	--	system_u:object_r:shell_exec_t:s0
-/usr/lib/rpm/rpmd	--	system_u:object_r:bin_t:s0
-/usr/lib/rpm/rpmq	--	system_u:object_r:bin_t:s0
-/usr/lib/rpm/rpmv	--	system_u:object_r:bin_t:s0
 /usr/lib/rpm/rpmk	--	system_u:object_r:bin_t:s0
+/usr/lib/rpm/rpmq	--	system_u:object_r:bin_t:s0
+/usr/lib/rpm/rpmd	--	system_u:object_r:bin_t:s0
+/usr/lib/rpm/rpmv	--	system_u:object_r:bin_t:s0
 /lib/udev/scsi_id	--	system_u:object_r:bin_t:s0
 /sbin/mkfs\.cramfs	--	system_u:object_r:bin_t:s0
 /etc/fstab\.REVOKE	--	system_u:object_r:etc_runtime_t:s0
@@ -4195,8 +4208,8 @@
 /etc/udev/devices	-d	system_u:object_r:device_t:s0
 /dev/loop-control	-c	system_u:object_r:loop_control_device_t:s0
 /dev/xen/gntalloc	-c	system_u:object_r:xen_device_t:s0
-/dev/vmbus/hv_kvp	-c	system_u:object_r:hypervkvp_device_t:s0
 /dev/vmbus/hv_vss	-c	system_u:object_r:hypervvssd_device_t:s0
+/dev/vmbus/hv_kvp	-c	system_u:object_r:hypervkvp_device_t:s0
 /dev/input/uinput	-c	system_u:object_r:event_device_t:s0
 /usr/vice/etc/afsd	--	system_u:object_r:afs_exec_t:s0
 /var/run/aiccu\.pid	--	system_u:object_r:aiccu_var_run_t:s0
@@ -4388,8 +4401,8 @@
 /usr/bin/rpm-ostree	--	system_u:object_r:install_exec_t:s0
 /var/run/thttpd\.pid	--	system_u:object_r:httpd_var_run_t:s0
 /usr/sbin/automount	--	system_u:object_r:automount_exec_t:s0
-/etc/sysconfig/init	--	system_u:object_r:bin_t:s0
 /usr/bin/mountpoint	--	system_u:object_r:bin_t:s0
+/etc/sysconfig/init	--	system_u:object_r:bin_t:s0
 /etc/apcupsd/commok	--	system_u:object_r:bin_t:s0
 /usr/sbin/named-sdb	--	system_u:object_r:named_exec_t:s0
 /var/named/named\.ca	--	system_u:object_r:named_conf_t:s0
@@ -4558,7 +4571,7 @@
 /usr/bin/dbus-broker	--	system_u:object_r:dbusd_exec_t:s0
 /lib/udisks2/udisksd	--	system_u:object_r:devicekit_disk_exec_t:s0
 /usr/libexec/upowerd	--	system_u:object_r:devicekit_power_exec_t:s0
-/usr/sbin/ldap-agent	--	system_u:object_r:initrc_exec_t:s0
+/usr/sbin/ldap-agent	--	system_u:object_r:dirsrv_snmp_exec_t:s0
 /usr/sbin/biosdecode	--	system_u:object_r:dmidecode_exec_t:s0
 /usr/bin/ejabberdctl	--	system_u:object_r:ejabberd_exec_t:s0
 /var/run/haveged\.pid	--	system_u:object_r:entropyd_var_run_t:s0
@@ -4951,6 +4964,7 @@
 /etc/rc\.d/init\.d/ulogd	--	system_u:object_r:ulogd_initrc_exec_t:s0
 /usr/bin/consolehelper	--	system_u:object_r:consolehelper_exec_t:s0
 /etc/rc\.d/init\.d/uuidd	--	system_u:object_r:uuidd_initrc_exec_t:s0
+/usr/bin/VGAuthService	--	system_u:object_r:vmtools_exec_t:s0
 /usr/bin/vmnet-netifup	--	system_u:object_r:vmware_host_exec_t:s0
 /usr/bin/vmnet-sniffer	--	system_u:object_r:vmware_host_exec_t:s0
 /usr/bin/vmware-wizard	--	system_u:object_r:vmware_exec_t:s0
@@ -5091,6 +5105,7 @@
 /usr/sbin/ipx_interface	--	system_u:object_r:ifconfig_exec_t:s0
 /usr/bin/systemd-notify	--	system_u:object_r:systemd_notify_exec_t:s0
 /var/run/varnishlog\.pid	--	system_u:object_r:varnishlog_var_run_t:s0
+/usr/bin/qemu-pr-helper	--	system_u:object_r:virtd_exec_t:s0
 /usr/share/vdsm/respawn	--	system_u:object_r:virtd_exec_t:s0
 /usr/bin/vmware-network	--	system_u:object_r:vmware_host_exec_t:s0
 /etc/rc\.d/init\.d/vnstat	--	system_u:object_r:vnstatd_initrc_exec_t:s0
@@ -5337,8 +5352,8 @@
 /usr/bin/vmware-smbpasswd	--	system_u:object_r:vmware_host_exec_t:s0
 /etc/rc\.d/init\.d/watchdog	--	system_u:object_r:watchdog_initrc_exec_t:s0
 /usr/lib/udev/devices/pts	-d	system_u:object_r:devpts_t:s0
-/usr/lib/udev/devices/shm	-d	system_u:object_r:tmpfs_t:s0
 /var/log/audit/lost\+found	-d	system_u:object_r:lost_found_t:s0
+/usr/lib/udev/devices/shm	-d	system_u:object_r:tmpfs_t:s0
 /var/named/chroot_sdb/dev	-d	system_u:object_r:device_t:s0
 /var/lib/likewise-open/db	-d	system_u:object_r:likewise_var_lib_t:s0
 /var/named/chroot/var/log	-d	system_u:object_r:var_log_t:s0
@@ -5376,6 +5391,7 @@
 /usr/libexec/news/filechan	--	system_u:object_r:innd_exec_t:s0
 /usr/libexec/news/overchan	--	system_u:object_r:innd_exec_t:s0
 /etc/strongswan/ipsec\.conf	--	system_u:object_r:ipsec_conf_file_t:s0
+/usr/libexec/ipsec/addconn	--	system_u:object_r:ipsec_exec_t:s0
 /usr/sbin/ebtables-restore	--	system_u:object_r:iptables_exec_t:s0
 /var/lock/subsys/ip6tables	--	system_u:object_r:iptables_lock_t:s0
 /var/run/kismet_server\.pid	--	system_u:object_r:kismet_var_run_t:s0
@@ -5506,6 +5522,7 @@
 /var/lib/likewise/db/sam\.db	--	system_u:object_r:lsassd_var_lib_t:s0
 /var/run/spamass-milter\.pid	--	system_u:object_r:spamass_milter_data_t:s0
 /etc/rc\.d/init\.d/munin-node	--	system_u:object_r:munin_initrc_exec_t:s0
+/usr/bin/mysqld_safe_helper	--	system_u:object_r:mysqld_exec_t:s0
 /usr/lib/heartbeat/send_arp	--	system_u:object_r:ping_exec_t:s0
 /var/run/NetworkManager\.pid	--	system_u:object_r:NetworkManager_var_run_t:s0
 /usr/sbin/rpc\.yppasswdd\.env	--	system_u:object_r:yppasswdd_exec_t:s0
@@ -5619,6 +5636,7 @@
 /var/lib/likewise/rpc/socket	-s	system_u:object_r:eventlogd_var_socket_t:s0
 /var/lib/likewise-open/\.lwsm	-s	system_u:object_r:lwsmd_var_socket_t:s0
 /var/run/pkcs11proxyd\.socket	-s	system_u:object_r:pkcs11proxyd_var_run_t:s0
+/var/run/qemu-pr-helper\.sock	-s	system_u:object_r:virt_var_run_t:s0
 /root/\.google_authenticator~	system_u:object_r:auth_home_t:s0
 /etc/wdmd\.d/checkquorum\.wdmd	system_u:object_r:bin_t:s0
 /etc/rc\.d/init\.d/mcollective	system_u:object_r:openshift_initrc_exec_t:s0
@@ -5844,8 +5862,8 @@
 /var/run/pmlogger\.primary\.socket	-l	system_u:object_r:pcp_var_run_t:s0
 /usr/share/clamav/freshclam-sleep	--	system_u:object_r:bin_t:s0
 /usr/share/texmf/texconfig/tcfmgr	--	system_u:object_r:bin_t:s0
-/usr/share/cluster/ocf-shellfuncs	--	system_u:object_r:bin_t:s0
 /usr/share/cluster/svclib_nfslock	--	system_u:object_r:bin_t:s0
+/usr/share/cluster/ocf-shellfuncs	--	system_u:object_r:bin_t:s0
 /usr/lib/xfce4/exo-1/exo-helper-1	--	system_u:object_r:bin_t:s0
 /var/lib/servicelog/servicelog\.db	--	system_u:object_r:system_db_t:s0
 /usr/libexec/bluetooth/bluetoothd	--	system_u:object_r:bluetooth_exec_t:s0
@@ -5890,9 +5908,9 @@
 /usr/libexec/anaconda/anaconda-yum	--	system_u:object_r:install_exec_t:s0
 /var/run/amavisd-snmp-subagent\.pid	--	system_u:object_r:antivirus_var_run_t:s0
 /usr/libexec/httpd-ssl-pass-dialog	--	system_u:object_r:httpd_passwd_exec_t:s0
+/usr/share/munin/plugins/plugin\.sh	--	system_u:object_r:bin_t:s0
 /usr/share/pwlib/make/ptlib-config	--	system_u:object_r:bin_t:s0
 /usr/share/fedora-usermgmt/wrapper	--	system_u:object_r:bin_t:s0
-/usr/share/munin/plugins/plugin\.sh	--	system_u:object_r:bin_t:s0
 /usr/share/printconf/util/print\.py	--	system_u:object_r:bin_t:s0
 /usr/lib/xfce4/xfwm4/helper-dialog	--	system_u:object_r:bin_t:s0
 /etc/pki/tls/certs/make-dummy-cert	--	system_u:object_r:bin_t:s0
@@ -5995,10 +6013,10 @@
 /etc/rc\.d/init\.d/mountnfs-bootclean\.sh	--	system_u:object_r:tmpreaper_exec_t:s0
 /usr/share/spamassassin/sa-update\.cron	system_u:object_r:bin_t:s0
 /usr/share/switchdesk/switchdesk-gui\.py	--	system_u:object_r:bin_t:s0
-/usr/share/authconfig/authconfig-gtk\.py	--	system_u:object_r:bin_t:s0
 /usr/share/authconfig/authconfig-tui\.py	--	system_u:object_r:bin_t:s0
-/usr/share/gitolite/hooks/common/update	--	system_u:object_r:bin_t:s0
+/usr/share/authconfig/authconfig-gtk\.py	--	system_u:object_r:bin_t:s0
 /usr/share/gnucash/finance-quote-helper	--	system_u:object_r:bin_t:s0
+/usr/share/gitolite/hooks/common/update	--	system_u:object_r:bin_t:s0
 /usr/lib/xfce4/exo-1/exo-compose-mail-1	--	system_u:object_r:bin_t:s0
 /usr/libexec/ipa/ipa-dnskeysync-replica	--	system_u:object_r:ipa_dnskey_exec_t:s0
 /usr/lib/systemd/system/ipmievd\.service	--	system_u:object_r:ipmievd_unit_file_t:s0
@@ -6009,6 +6027,7 @@
 /usr/lib/nagios/plugins/check_ide_smart	--	system_u:object_r:nagios_checkdisk_plugin_exec_t:s0
 /etc/sysconfig/oracleasm-_dev_oracleasm	--	system_u:object_r:oracleasm_conf_t:s0
 /usr/lib/polkit-1/polkit-agent-helper-1	--	system_u:object_r:policykit_auth_exec_t:s0
+/usr/lib/systemd/systemd-fence_sanlockd	--	system_u:object_r:fenced_exec_t:s0
 /usr/lib/systemd/system/rpcbind\.service	--	system_u:object_r:rpcbind_unit_file_t:s0
 /usr/lib/systemd/system/sanlock\.service	--	system_u:object_r:sanlock_unit_file_t:s0
 /usr/bin/systemd-tty-ask-password-agent	--	system_u:object_r:systemd_passwd_agent_exec_t:s0
@@ -6035,11 +6054,12 @@
 /usr/lib/vlc/codec/librealaudio_plugin\.so	--	system_u:object_r:textrel_shlib_t:s0
 /var/lib/likewise/db/lsass-adstate\.filedb	--	system_u:object_r:lsassd_var_lib_t:s0
 /var/lib/likewise-open/krb5-affinity\.conf	--	system_u:object_r:netlogond_var_lib_t:s0
+/var/run/systemd/resolve/stub-resolv\.conf	--	system_u:object_r:net_conf_t:s0
 /usr/bin/systemd-gnome-ask-password-agent	--	system_u:object_r:systemd_passwd_agent_exec_t:s0
 /usr/share/system-config-selinux/polgen\.py	--	system_u:object_r:bin_t:s0
 /usr/share/PackageKit/pk-upgrade-distro\.sh	--	system_u:object_r:bin_t:s0
-/usr/share/system-config-nfs/nfs-export\.py	--	system_u:object_r:bin_t:s0
 /usr/share/system-config-printer/applet\.py	--	system_u:object_r:bin_t:s0
+/usr/share/system-config-nfs/nfs-export\.py	--	system_u:object_r:bin_t:s0
 /usr/lib/xfce4/session/balou-install-theme	--	system_u:object_r:bin_t:s0
 /etc/rc\.d/init\.d/openstack-glance-registry	--	system_u:object_r:glance_registry_initrc_exec_t:s0
 /etc/rc\.d/init\.d/openstack-glance-scrubber	--	system_u:object_r:glance_scrubber_initrc_exec_t:s0
@@ -6086,8 +6106,8 @@
 /usr/libexec/pegasus/pycmpiLMI_Storage-cimprovagt	--	system_u:object_r:pegasus_openlmi_storage_exec_t:s0
 /usr/share/ovirt-guest-agent/LockActiveSession\.py	--	system_u:object_r:rhev_agentd_exec_t:s0
 /usr/share/ovirt-guest-agent/ovirt-guest-agent\.py	--	system_u:object_r:rhev_agentd_exec_t:s0
-/usr/share/system-config-mouse/system-config-mouse	--	system_u:object_r:bin_t:s0
 /usr/share/system-config-httpd/system-config-httpd	--	system_u:object_r:bin_t:s0
+/usr/share/system-config-mouse/system-config-mouse	--	system_u:object_r:bin_t:s0
 /usr/share/system-config-users/system-config-users	--	system_u:object_r:bin_t:s0
 /etc/X11/xorg\.conf\.d/00-system-setup-keyboard\.conf	--	system_u:object_r:etc_runtime_t:s0
 /usr/lib64/nagios/plugins/check_node_accept_status	--	system_u:object_r:nagios_openshift_plugin_exec_t:s0

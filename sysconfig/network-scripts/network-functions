@@ -198,7 +198,7 @@ ethtool_set()
     IFS=';';
     if [ -n "${ETHTOOL_DELAY}" ]; then
       # Convert microseconds to seconds:
-      local ETHTOOL_DELAY_SEC=$(awk "BEGIN {printf \"%f\", ${ETHTOOL_DELAY} / 1000000}")
+      local ETHTOOL_DELAY_SEC=$(convert2sec ${ETHTOOL_DELAY} micro)
       sleep ${ETHTOOL_DELAY_SEC}
     fi
     for opts in $ETHTOOL_OPTS ; do
@@ -226,6 +226,7 @@ expand_config ()
         netmask[$i]=$(eval echo '$'NETMASK$idx)
         broadcast[$i]=$(eval echo '$'BROADCAST$idx)
         arpcheck[$i]=$(eval echo '$'ARPCHECK$idx)
+        arpupdate[$i]=$(eval echo '$'ARPUPDATE$idx)
 
         if [ "${prefix[$i]}x" != "x" ]; then
             val=$(/bin/ipcalc --netmask "${ipaddr[$i]}/${prefix[$i]}")
@@ -250,6 +251,11 @@ expand_config ()
         if [ "${arpcheck[$i]}x" != "x" ]; then
             arpcheck[$i]=${arpcheck[$i]##ARPCHECK=}
             arpcheck[$i]=${arpcheck[$i],,*}
+        fi
+
+        if [ "${arpupdate[$i]}x" != "x" ]; then
+            arpupdate[$i]=${arpupdate[$i]##ARPUPDATE=}
+            arpupdate[$i]=${arpupdate[$i],,*}
         fi
 
         i=$((i+1))
@@ -277,7 +283,7 @@ do_netreport ()
 {
     # Notify programs that have requested notification
     (
-        cd /var/run/netreport || exit
+        cd /run/netreport || exit
         for i in * ; do
             if [ -f $i ]; then
                 if [ "$(id -u)" = "0" ]; then
@@ -442,6 +448,10 @@ set_hostname ()
             rsctmp=$(mktemp /tmp/XXXXXX);
             cat /etc/resolv.conf > $rsctmp
             echo "search $domain" >> $rsctmp
+
+            # Backup resolv.conf only if it doesn't exist already:
+            ! [ -f /etc/resolv.conf.save ] && cp -af /etc/resolv.conf /etc/resolv.conf.save
+
             change_resolv_conf $rsctmp
             /bin/rm -f $rsctmp
         fi    
@@ -648,7 +658,7 @@ change_resolv_conf ()
     if [ $r -eq 0 ]; then
         [ -x /sbin/restorecon ] && /sbin/restorecon /etc/resolv.conf >/dev/null 2>&1 # reset the correct context
         /usr/bin/logger -p local7.notice -t "NET" -i "$0 : updated /etc/resolv.conf"
-        [ -e /var/run/nscd/socket ] && /usr/sbin/nscd -i hosts # invalidate cache
+        [ -e /run/nscd/socket ] && /usr/sbin/nscd -i hosts # invalidate cache
     fi
     return $r
 }
@@ -690,4 +700,33 @@ net_log()
         /usr/bin/logger -p daemon.$level -t "$name" "$message"
     fi
     return 0
+}
+
+update_DNS_entries()
+{
+    # Remove duplicate values from DNS options if any:
+    if [ -n "${DNS3}" ] && [[ "${DNS3}" == "${DNS2}" || "${DNS3}" == "${DNS1}" ]]; then
+        unset DNS3
+    fi
+
+    if [ -n "${DNS2}" ] && [[ "${DNS2}" == "${DNS1}" ]]; then
+        unset DNS2
+    fi
+
+    # Shift the DNS options if necessary:
+    if [ -z "${DNS1}" ] && [ -n "${DNS2}" ]; then
+        DNS1="${DNS2}"
+        unset DNS2
+    fi
+
+    if [ -z "${DNS2}" ] && [ -n "${DNS3}" ]; then
+        DNS2="${DNS3}"
+        unset DNS3
+    fi
+
+    # We need to check DNS1 again in case only DNS3 was set at all:
+    if [ -z "${DNS1}" ] && [ -n "${DNS2}" ]; then
+        DNS1="${DNS2}"
+        unset DNS2
+    fi
 }

@@ -63,10 +63,14 @@ fi
 
 case x"$GRUB_FS" in
     xbtrfs)
+	if [ "x${SUSE_BTRFS_SNAPSHOT_BOOTING}" = "xtrue" ]; then
+	GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} \${extra_cmdline}"
+	else
 	rootsubvol="`make_system_path_relative_to_its_root /`"
 	rootsubvol="${rootsubvol#/}"
 	if [ "x${rootsubvol}" != x ]; then
 	    GRUB_CMDLINE_LINUX="rootflags=subvol=${rootsubvol} ${GRUB_CMDLINE_LINUX}"
+	fi
 	fi;;
     xzfs)
 	rpool=`${grub_probe} --device ${GRUB_DEVICE} --target=fs_label 2>/dev/null || true`
@@ -122,16 +126,19 @@ linux_entry ()
         else
             xen_rm_opts="no-real-mode edd=off"
         fi
-	multiboot	${rel_xen_dirname}/${xen_basename} placeholder ${xen_args} \${xen_rm_opts}
+	insmod ${module_loader}
+	insmod ${xen_loader}
+	${xen_loader}	${rel_xen_dirname}/${xen_basename} placeholder ${xen_args} \${xen_rm_opts}
 	echo	'$(echo "$lmessage" | grub_quote)'
-	module	${rel_dirname}/${basename} placeholder root=${linux_root_device_thisversion} ro ${args}
+	${module_loader}	${rel_dirname}/${basename} placeholder root=${linux_root_device_thisversion} ro ${args}
 EOF
   if test -n "${initrd}" ; then
     # TRANSLATORS: ramdisk isn't identifier. Should be translated.
     message="$(gettext_printf "Loading initial ramdisk ...")"
     sed "s/^/$submenu_indentation/" << EOF
 	echo	'$(echo "$message" | grub_quote)'
-	module	--nounzip   ${rel_dirname}/${initrd}
+	insmod ${module_loader}
+	${module_loader}	--nounzip   ${rel_dirname}/${initrd}
 EOF
   fi
   sed "s/^/$submenu_indentation/" << EOF
@@ -205,6 +212,17 @@ while [ "x${xen_list}" != "x" ] ; do
     fi
     if [ "x$is_top_level" != xtrue ]; then
 	echo "	submenu '$(gettext_printf "Xen hypervisor, version %s" "${xen_version}" | grub_quote)' \$menuentry_id_option 'xen-hypervisor-$xen_version-$boot_device_id' {"
+    fi
+    if ($grub_file --is-arm64-efi $current_xen); then
+	xen_loader="xen_hypervisor"
+	module_loader="xen_module"
+    else
+	xen_loader="multiboot"
+	module_loader="module"
+	if ($grub_file --is-x86-multiboot2 $current_xen); then
+		xen_loader="multiboot2"
+		module_loader="module2"
+	fi
     fi
     while [ "x$list" != "x" ] ; do
 	linux=`version_find_latest $list`

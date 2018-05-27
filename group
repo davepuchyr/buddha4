@@ -67,3 +67,7 @@ named:x:25:
 monero:x:1005:dave
 caddy:x:496:
 noip:x:495:
+nginx:x:494:
+kvm:x:36:
+printadmin:x:493:
+dnsmasq:x:983:

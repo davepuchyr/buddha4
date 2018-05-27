@@ -51,13 +51,16 @@ if [ "${TYPE}" = "Bridge" ]; then
         net_log $"Bridge support not available: brctl not found"
         exit 1
     fi
+
     if [ ! -d /sys/class/net/${DEVICE}/bridge ]; then
         /usr/sbin/brctl addbr -- ${DEVICE} || exit 1
     fi
+
     [ -n "${DELAY}" ] && /usr/sbin/brctl setfd -- ${DEVICE} ${DELAY}
     [ -n "${STP}" ] && /usr/sbin/brctl stp -- ${DEVICE} ${STP}
     [ -n "${PRIO}" ] && /usr/sbin/brctl setbridgeprio ${DEVICE} ${PRIO}
     [ -n "${AGEING}" ] && /usr/sbin/brctl setageing ${DEVICE} ${AGEING}
+
     # add the bits to setup driver parameters here
     for arg in $BRIDGING_OPTS ; do
         key=${arg%%=*};
@@ -66,14 +69,28 @@ if [ "${TYPE}" = "Bridge" ]; then
             echo $value > /sys/class/net/${DEVICE}/bridge/$key
         fi
     done
+
     # set LINKDELAY (used as timeout when calling check_link_down())
     # to at least (${DELAY} * 2) + 7 if STP is enabled. This is the
     # minimum time required for /sys/class/net/$REALDEVICE/carrier to
     # become 1 after "ip link set dev $DEVICE up" is called.
-    if [ "${STP}" = "yes" -o "${STP}" = "on" ]; then
-        TMPD=7
-        [ -n "${DELAY}" ] && TMPD=$(expr ${DELAY} \* 2 + ${TMPD})
-        [ 0$LINKDELAY -lt $TMPD ] && LINKDELAY=$TMPD
+    if is_true "${STP}"; then
+        if [ -n "${DELAY}" ]; then
+          forward_delay="${DELAY}"
+        else
+          # If the ${DELAY} value is not set by the user, then we need to obtain
+          # the forward_delay value from kernel first, and convert it to seconds.
+          # Otherwise STP might not correctly complete the startup before trying
+          # to obtain an IP address from DHCP.
+          forward_delay="$(cat /sys/devices/virtual/net/${DEVICE}/bridge/forward_delay)"
+          forward_delay="$(convert2sec ${forward_delay} centi)"
+        fi
+
+        forward_delay=$(expr ${forward_delay} \* 2 + 7)
+
+        [ 0$LINKDELAY -lt $forward_delay ] && LINKDELAY=$forward_delay
+
+        unset forward_delay
     fi
 fi
 
@@ -173,7 +190,7 @@ if [ -n "${BRIDGE}" ] && [ -x /usr/sbin/brctl ]; then
     done
     # Upon adding a device to a bridge,
     # it's necessary to make radvd reload its config
-    [ -r /var/run/radvd/radvd.pid ] && kill -HUP $(cat /var/run/radvd/radvd.pid)
+    [ -r /run/radvd/radvd.pid ] && kill -HUP $(cat /run/radvd/radvd.pid)
     exit 0
 fi
 
@@ -187,7 +204,7 @@ if [ -n "${DYNCONFIG}" ] && [ -x /sbin/dhclient ]; then
     generate_lease_file_name
 
     # Initialize the dhclient args and obtain the hostname options if needed:
-    DHCLIENTARGS="${DHCLIENTARGS} ${ONESHOT} -q ${DHCLIENTCONF} -lf ${LEASEFILE} -pf /var/run/dhclient-${DEVICE}.pid"
+    DHCLIENTARGS="${DHCLIENTARGS} ${ONESHOT} -q ${DHCLIENTCONF} -lf ${LEASEFILE} -pf /run/dhclient-${DEVICE}.pid"
     set_hostname_options DHCLIENTARGS
 
     echo
@@ -274,7 +291,7 @@ else
             fi
 
             # update ARP cache of neighboring computers
-            if [ "${REALDEVICE}" != "lo" ]; then
+            if ! is_false "${arpupdate[$idx]}" && [ "${REALDEVICE}" != "lo" ]; then
                 /sbin/arping -q -A -c 1 -I ${REALDEVICE} ${ipaddr[$idx]}
                 ( sleep 2;
                 /sbin/arping -q -U -c 1 -I ${REALDEVICE} ${ipaddr[$idx]} ) > /dev/null 2>&1 < /dev/null &
@@ -308,11 +325,6 @@ if [ -z "${NOZEROCONF}" -a "${ISALIAS}" = "no" -a "${REALDEVICE}" != "lo" ]; the
     ip route add 169.254.0.0/16 dev ${REALDEVICE} metric $((1000 + $(cat /sys/class/net/${REALDEVICE}/ifindex))) scope link
 fi
 
-# Inform firewall which network zone (empty means default) this interface belongs to
-if [ -x /usr/bin/firewall-cmd -a "${REALDEVICE}" != "lo" ]; then
-    /usr/bin/firewall-cmd --zone="${ZONE}" --change-interface="${DEVICE}" > /dev/null 2>&1
-fi
-
 if [ "${TYPE}" = "Bridge" ]; then
     for arg in $BRIDGING_OPTS ; do
         key=${arg%%=*};
@@ -326,13 +338,23 @@ fi
 # IPv6 initialisation?
 /etc/sysconfig/network-scripts/ifup-ipv6 ${CONFIG}
 if is_true "${DHCPV6C}" && [ -x /sbin/dhclient ]; then
+
+    # Assign interface into a firewalld zone so we can obtain the IPv6 via DHCPv6:
+    if [ "${REALDEVICE}" != "lo" ]; then
+        dbus-send --print-reply --system --dest=org.fedoraproject.FirewallD1 \
+                  /org/fedoraproject/FirewallD1 \
+                  org.fedoraproject.FirewallD1.zone.changeZoneOfInterface \
+                  string:"${ZONE}" string:"${DEVICE}" \
+                  > /dev/null 2>&1
+    fi
+
     generate_config_file_name 6
     generate_lease_file_name 6
     echo
     echo -n $"Determining IPv6 information for ${DEVICE}..."
 
     # Initialize the dhclient args for IPv6 and obtain the hostname options if needed:
-    DHCLIENTARGS="-6 -1 ${DHCPV6C_OPTIONS} ${DHCLIENTCONF} -lf ${LEASEFILE} -pf /var/run/dhclient6-${DEVICE}.pid ${DEVICE}"
+    DHCLIENTARGS="-6 -1 ${DHCPV6C_OPTIONS} ${DHCLIENTCONF} -lf ${LEASEFILE} -pf /run/dhclient6-${DEVICE}.pid ${DEVICE}"
     set_hostname_options DHCLIENTARGS
 
     if /sbin/dhclient $DHCLIENTARGS; then

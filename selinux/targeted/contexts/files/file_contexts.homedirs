@@ -139,6 +139,7 @@
 /home/[^/]+/\.cache/libvirt/qemu(/.*)?	unconfined_u:object_r:svirt_home_t:s0
 /home/[^/]+/\.cache/google-chrome(/.*)?	unconfined_u:object_r:chrome_sandbox_home_t:s0
 /home/[^/]+/\.local/share/systemd(/.*)?	unconfined_u:object_r:systemd_home_t:s0
+/home/[^/]+/\.config/systemd/user(/.*)?	unconfined_u:object_r:systemd_unit_file_t:s0
 /home/[^/]+/\.config/libvirt/qemu(/.*)?	unconfined_u:object_r:svirt_home_t:s0
 /home/[^/]+/VirtualMachines/isos(/.*)?	unconfined_u:object_r:virt_content_t:s0
 /home/[^/]+/\.local/share/keyrings(/.*)?	unconfined_u:object_r:gkeyringd_gnome_home_t:s0
@@ -189,6 +190,7 @@
 /home/[^/]+/\.google_authenticator	unconfined_u:object_r:auth_home_t:s0
 /home/[^/]+/\.cache/\.mc_connections	--	unconfined_u:object_r:telepathy_mission_control_cache_home_t:s0
 /home/[^/]+/\.google_authenticator~	unconfined_u:object_r:auth_home_t:s0
+/home/(.*/)?\.snapshots(/.*)?	system_u:object_r:snapperd_data_t:s0
 /home/a?quota\.(user|group)	--	system_u:object_r:quota_db_t:s0
 /home/lost\+found/.*	<<none>>
 /home	-d	system_u:object_r:home_root_t:s0

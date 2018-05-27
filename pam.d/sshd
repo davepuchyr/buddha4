@@ -1,9 +1,7 @@
 #%PAM-1.0
-auth	   required	pam_sepermit.so
 auth       substack     password-auth
 auth       include      postlogin
-# Used with polkit to reauthorize users in remote sessions
--auth      optional     pam_reauthorize.so prepare
+account    required     pam_sepermit.so
 account    required     pam_nologin.so
 account    include      password-auth
 password   include      password-auth
@@ -16,5 +14,3 @@ session    required     pam_namespace.so
 session    optional     pam_keyinit.so force revoke
 session    include      password-auth
 session    include      postlogin
-# Used with polkit to reauthorize users in remote sessions
--session   optional     pam_reauthorize.so prepare
