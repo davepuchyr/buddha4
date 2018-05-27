@@ -40,8 +40,17 @@ else
   exit 1
 fi
 
-ROOTDIR=`$COMMAND_AWK -F'"' '/^ServerRoot/ {print $2}' ${EtcDir}/server/localhost/server.cfg`
+if [ -x "/bin/head" ];
+then
+  COMMAND_HEAD="/bin/head"
+elif [ -x "/usr/bin/head" ];
+then
+  COMMAND_HEAD="/usr/bin/head"
+else
+  COMMAND_HEAD="head"
+fi
 
+ROOTDIR=`$COMMAND_AWK -F'"' '/^ServerRoot/ {print $2}' ${EtcDir}/server/localhost/server.cfg`
 
 if [ "x$ROOTDIR" = "x" ];
 then
@@ -107,6 +116,26 @@ elif test "$1" = "--login"; then
   exec "$ROOTDIR/bin/nxexec" /etc/NX/nxserver noloop
 fi
 
+CONFIG_FILE="${ROOTDIR}/etc/server.cfg"
+
+ENABLED_DEBUG=`$COMMAND_AWK -F "EnableDebug " '/^ *EnableDebug/ {gsub (/\"/,"",$2); gsub (/^ */,"",$2); print $2}' "${CONFIG_FILE}" | $COMMAND_HEAD -n 1`
+
+if test -z $ENABLED_DEBUG;
+then
+  ENABLED_DEBUG=0
+elif test $ENABLED_DEBUG != 0;
+then
+  ENABLED_DEBUG=1
+
+  COMMAND_DEBUG=`$COMMAND_AWK -F "CommandDebug " '/^ *CommandDebug/ {gsub (/\"/,"",$2); gsub (/^ */,"",$2); print $2}' "${CONFIG_FILE}" | $COMMAND_HEAD -n 1`
+  if test -z $COMMAND_DEBUG;
+  then
+    ENABLED_DEBUG=0
+  else
+    PARAMS_DEBUG=`$COMMAND_AWK -F "DebugOptions " '/^ *DebugOptions/ {gsub (/\"/,"",$2); print $2}' "${CONFIG_FILE}" | $COMMAND_HEAD -n 1`
+  fi
+fi
+
 if test "x$PATH" = "x";
 then
   export PATH="/bin:/usr/bin"
@@ -118,6 +147,11 @@ export PERL5LIB="$ROOTDIR/lib:$ROOTDIR/lib/perl:$ROOTDIR/lib/perl/include:$ROOTD
 export PERL5INCLUDE="$ROOTDIR/lib/perl/nxserver"
 export NX_SYSTEM="$ROOTDIR"
 
-exec "$ROOTDIR/bin/nxserver.bin" "$@"
+if test $ENABLED_DEBUG = 0;
+then
+  exec "$ROOTDIR/bin/nxserver.bin" "$@"
+else
+  export NX_FREEPERL="no"
 
-
+  exec $COMMAND_DEBUG ${PARAMS_DEBUG} "$ROOTDIR/bin/nxserver.bin" "$@"
+fi
