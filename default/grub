@@ -1,6 +1,6 @@
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
-GRUB_DEFAULT=saved
+GRUB_DEFAULT="Fedora (4.13.16-100.fc25.x86_64) 25 (Twenty Five)"
 GRUB_DISABLE_SUBMENU=true
 GRUB_TERMINAL_OUTPUT="console"
 GRUB_CMDLINE_LINUX="resume=/dev/sda2"
